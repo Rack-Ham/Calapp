@@ -1,3 +1,15 @@
 page-home {
-
+    ion-icon{
+        color: black;
+        display:flex;
+        justify-content:center;
+        margin-top:20%;
+    }
+    .toolbar-background{
+        background-color:red;
+    }
+    h1{
+        color:black;
+        font-weight:bold;
+    }
 }
