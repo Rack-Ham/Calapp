@@ -7,7 +7,7 @@ import { NavController, AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController) {
 
   }
 
@@ -15,4 +15,16 @@ export class HomePage {
 
 /*ALERT BUTTONS*/
 
+export class home {
 
+  constructor(public alertCtrl: AlertController) { }
+
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'New Friend!',
+      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+}

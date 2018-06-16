@@ -1,17 +1,48 @@
 <!--................HEADER START...............-->
 <ion-header>
   <ion-navbar>
-    <ion-title>
-        
-      <h1>Annonces</h1>
-          
+    <div ion-row justify-content-between>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-title text-center>
+      Annonces
     </ion-title>
+    <button ion-fab mini><ion-icon name="calendar"></ion-icon></button>
+    </div>
   </ion-navbar>
 </ion-header>
 <!--...............HEADER END..................-->
 <!--...............CONTENT.....................-->
-<ion-content padding>
-  
-
+<ion-content padding-top>
+    <ion-list>
+      <div text-center padding-top margin>
+        <button (tap)="showAlert" ion-button block color="dark" outline>Assemblée Générale<br>
+        8 Juin 2018</button>
+      </div>
+      <div text-center margin>
+          <button (tap)="showAlert" ion-button block color="dark" outline>Match Basket équipe U1<br>
+          9 Juin 2018</button>
+        </div>
+      <div text-center margin>
+          <button (tap)="showAlert" ion-button block color="dark" outline>Réunion AGE<br>
+          21 Juin 2018</button>
+      </div>
+      <div text-center margin>
+          <button (tap)="showAlert" ion-button block color="dark" outline>Début des colos<br>
+          30 Juin 2018</button>
+      </div>
+      <div text-center margin>
+          <button (tap)="showAlert" ion-button block color="dark" outline>Kermesse<br>
+          6 Juin 2018</button>
+      </div>
+    </ion-list>
+<div ion-row justify-content-center>
+<ion-img center width="265" height="168" src="https://image.jimcdn.com/app/cms/image/transf/dimension=531x1024:format=jpg/path/sd5a7ed8ecde2cc1d/image/i04ecea4181aa7286/version/1526394324/image.jpg"></ion-img>
+</div>
+<div ion-row align-items-end>
+<button ion-fab mini><ion-icon name="construct"></ion-icon></button>
+</div>
 <!--...............END-CONTENT.....................-->
 </ion-content>
+<!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>
