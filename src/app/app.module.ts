@@ -13,14 +13,15 @@ import { fixPage } from '../pages/Fixation dates/fix';
 //SELECTION ADHERENTS
 import { selectadhPage } from '../pages/Sélection Adhérents/selectadh';
 //CALENDRIER
-
+import { calendarPage } from '../pages/Calendrier/calendar';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     fixPage,
-    selectadhPage
+    selectadhPage,
+    calendarPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { selectadhPage } from '../pages/Sélection Adhérents/selectadh';
     MyApp,
     HomePage,
     fixPage,
-    selectadhPage
+    selectadhPage,
+    calendarPage
   ],
   providers: [
     StatusBar,

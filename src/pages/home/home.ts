@@ -4,6 +4,7 @@ import { NavController, AlertController } from 'ionic-angular';
 /*IMPORT PAGES*/
 
 import { fixPage } from '../Fixation dates/fix';
+import { calendarPage } from '../Calendrier/calendar';
 
 @Component({
   selector: 'page-home',
@@ -21,6 +22,9 @@ export class HomePage {
     this.navCtrl.push(fixPage);
   }
 
+  private showCalendar() {
+    this.navCtrl.push(calendarPage);
+  }
 }
 
 /*ALERT BUTTONS*/
