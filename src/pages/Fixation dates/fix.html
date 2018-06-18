@@ -1,0 +1,55 @@
+<!--................HEADER START...............-->
+<ion-header >
+    <ion-navbar>
+      <div ion-row justify-content-between >
+      <ion-title text-center>
+        Fixez l'événement
+      </ion-title>
+      </div>
+    </ion-navbar>
+  </ion-header>
+  <!--...............HEADER END..................-->
+  <!--...............CONTENT.....................-->
+  <ion-content padding-top>
+    <ion-list>
+        <ion-item>
+            <ion-label>Sélectionnez une date</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"
+            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">
+            </ion-datetime>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label color="primary" fixed>Titrez l'événement</ion-label>
+          <ion-input placeholder="Nom de l'événement" clearInput></ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label color="primary" fixed>Déterminez le lieu</ion-label>
+            <ion-input placeholder="Lieu/Adresse de l'event" clearInput floating></ion-input>
+          </ion-item>
+      
+        <ion-item>
+            <ion-label>Heure de début</ion-label>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="myDate">
+
+            </ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Heure de fin</ion-label>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="myDate">
+                
+            </ion-datetime>
+        </ion-item>
+
+        <div text-center margin-top>
+        <button ion-button color="danger">Valider</button>
+        </div>
+        
+      </ion-list>
+  </ion-content>
+  <!--...............END-CONTENT.....................-->
+  <!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>
