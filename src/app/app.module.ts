@@ -14,6 +14,8 @@ import { fixPage } from '../pages/Fixation dates/fix';
 import { selectadhPage } from '../pages/Sélection Adhérents/selectadh';
 //CALENDRIER
 import { calendarPage } from '../pages/Calendrier/calendar';
+//MENU - OPTIONS
+import { mainoptionPage } from '../pages/Menu - Option/main-option';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { calendarPage } from '../pages/Calendrier/calendar';
     HomePage,
     fixPage,
     selectadhPage,
-    calendarPage
+    calendarPage,
+    mainoptionPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { calendarPage } from '../pages/Calendrier/calendar';
     HomePage,
     fixPage,
     selectadhPage,
-    calendarPage
+    calendarPage,
+    mainoptionPage
   ],
   providers: [
     StatusBar,
