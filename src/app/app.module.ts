@@ -10,12 +10,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 //FIXATION DATES
 import { fixPage } from '../pages/Fixation dates/fix';
+//SELECTION ADHERENTS
+import { selectadhPage } from '../pages/Sélection Adhérents/selectadh';
+//CALENDRIER
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    fixPage
+    fixPage,
+    selectadhPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,8 @@ import { fixPage } from '../pages/Fixation dates/fix';
   entryComponents: [
     MyApp,
     HomePage,
-    fixPage
+    fixPage,
+    selectadhPage
   ],
   providers: [
     StatusBar,
