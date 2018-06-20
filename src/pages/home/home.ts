@@ -23,10 +23,12 @@ export class HomePage {
     this.navCtrl.push(fixPage);
   }
 
+  //NAV CALENDAR//
   private showCalendar() {
     this.navCtrl.push(calendarPage);
   }
 
+  //NAV OPTIONS//
   private showOptions() {
     this.navCtrl.push(mainoptionPage)  }
 }

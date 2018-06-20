@@ -16,6 +16,10 @@ import { selectadhPage } from '../pages/Sélection Adhérents/selectadh';
 import { calendarPage } from '../pages/Calendrier/calendar';
 //MENU - OPTIONS
 import { mainoptionPage } from '../pages/Menu - Option/main-option';
+//OPTION - CONNEXION
+import { connexionPage } from '../pages/Option - Connexion/connexion';
+//OPTION - CHANGE PASSWORD
+import { passwordPage } from '../pages/Option - Changer le mot de passe/change-password' ;
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { mainoptionPage } from '../pages/Menu - Option/main-option';
     fixPage,
     selectadhPage,
     calendarPage,
-    mainoptionPage
+    mainoptionPage,
+    connexionPage,
+    passwordPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { mainoptionPage } from '../pages/Menu - Option/main-option';
     fixPage,
     selectadhPage,
     calendarPage,
-    mainoptionPage
+    mainoptionPage,
+    connexionPage,
+    passwordPage
   ],
   providers: [
     StatusBar,
