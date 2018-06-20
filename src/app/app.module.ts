@@ -23,9 +23,11 @@ import { passwordPage } from '../pages/Option - Changer le mot de passe/change-p
 //OPTION - ALERT
 import { alertPage } from '../pages/Option - Alerte/alert' ;
 //OPTION - FONT SIZE
-import {fontsizePage } from '../pages/Option - Taille des caractères/fontsize' ;
+import { fontsizePage } from '../pages/Option - Taille des caractères/fontsize' ;
 //OPTION - NOTIFICATIONS
-import {notificationsPage } from '../pages/Option - Notifications/notifications' ;
+import { notificationsPage } from '../pages/Option - Notifications/notifications' ;
+//OPTION - PROBLEM
+import { problemPage } from '../pages/Option - Problème/problem' ;
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {notificationsPage } from '../pages/Option - Notifications/notifications'
     passwordPage,
     alertPage,
     fontsizePage,
-    notificationsPage
+    notificationsPage,
+    problemPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import {notificationsPage } from '../pages/Option - Notifications/notifications'
     passwordPage,
     alertPage,
     fontsizePage,
-    notificationsPage
+    notificationsPage,
+    problemPage
   ],
   providers: [
     StatusBar,

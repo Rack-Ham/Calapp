@@ -7,6 +7,7 @@ import { passwordPage } from '../Option - Changer le mot de passe/change-passwor
 import { alertPage } from '../Option - Alerte/alert';
 import { fontsizePage } from '../Option - Taille des caract\u00E8res/fontsize';
 import { notificationsPage } from '../Option - Notifications/notifications';
+import { problemPage } from '../Option - Problème/problem' ;
 
 @Component({
     selector: 'main-option',
@@ -36,6 +37,10 @@ export class mainoptionPage {
 
     private showNotifications() {
     this.navCtrl.push(notificationsPage)
+    }
+
+    private showProblem() {
+    this.navCtrl.push(problemPage)
     }
 }
 
