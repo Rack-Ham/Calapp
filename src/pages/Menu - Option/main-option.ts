@@ -5,6 +5,7 @@ import { NavController } from 'ionic-angular';
 import { connexionPage } from '../Option - Connexion/connexion';
 import { passwordPage } from '../Option - Changer le mot de passe/change-password';
 import { alertPage } from '../Option - Alerte/alert';
+import { fontsizePage } from '../Option - Taille des caract\u00E8res/fontsize';
 
 @Component({
     selector: 'main-option',
@@ -26,6 +27,10 @@ export class mainoptionPage {
 
     private showAlert() {
     this.navCtrl.push(alertPage)
+    }
+
+    private showFontsize() {
+    this.navCtrl.push(fontsizePage)
     }
 }
 

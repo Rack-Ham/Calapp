@@ -22,6 +22,8 @@ import { connexionPage } from '../pages/Option - Connexion/connexion';
 import { passwordPage } from '../pages/Option - Changer le mot de passe/change-password' ;
 //OPTION - ALERT
 import { alertPage } from '../pages/Option - Alerte/alert' ;
+//OPTION - FONT SIZE
+import {fontsizePage } from '../pages/Option - Taille des caractères/fontsize' ;
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { alertPage } from '../pages/Option - Alerte/alert' ;
     mainoptionPage,
     connexionPage,
     passwordPage,
-    alertPage
+    alertPage,
+    fontsizePage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { alertPage } from '../pages/Option - Alerte/alert' ;
     mainoptionPage,
     connexionPage,
     passwordPage,
-    alertPage
+    alertPage,
+    fontsizePage
   ],
   providers: [
     StatusBar,
