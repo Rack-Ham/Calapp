@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 /*IMPORT PAGES*/
 import { connexionPage } from '../Option - Connexion/connexion';
 import { passwordPage } from '../Option - Changer le mot de passe/change-password';
+import { alertPage } from '../Option - Alerte/alert';
 
 @Component({
     selector: 'main-option',
@@ -23,6 +24,9 @@ export class mainoptionPage {
     this.navCtrl.push(passwordPage)
     }
 
+    private showAlert() {
+    this.navCtrl.push(alertPage)
+    }
 }
 
 

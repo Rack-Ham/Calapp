@@ -20,6 +20,8 @@ import { mainoptionPage } from '../pages/Menu - Option/main-option';
 import { connexionPage } from '../pages/Option - Connexion/connexion';
 //OPTION - CHANGE PASSWORD
 import { passwordPage } from '../pages/Option - Changer le mot de passe/change-password' ;
+//OPTION - ALERT
+import { alertPage } from '../pages/Option - Alerte/alert' ;
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { passwordPage } from '../pages/Option - Changer le mot de passe/change-p
     calendarPage,
     mainoptionPage,
     connexionPage,
-    passwordPage
+    passwordPage,
+    alertPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { passwordPage } from '../pages/Option - Changer le mot de passe/change-p
     calendarPage,
     mainoptionPage,
     connexionPage,
-    passwordPage
+    passwordPage,
+    alertPage
   ],
   providers: [
     StatusBar,
