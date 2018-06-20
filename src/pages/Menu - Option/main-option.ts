@@ -6,6 +6,7 @@ import { connexionPage } from '../Option - Connexion/connexion';
 import { passwordPage } from '../Option - Changer le mot de passe/change-password';
 import { alertPage } from '../Option - Alerte/alert';
 import { fontsizePage } from '../Option - Taille des caract\u00E8res/fontsize';
+import { notificationsPage } from '../Option - Notifications/notifications';
 
 @Component({
     selector: 'main-option',
@@ -31,6 +32,10 @@ export class mainoptionPage {
 
     private showFontsize() {
     this.navCtrl.push(fontsizePage)
+    }
+
+    private showNotifications() {
+    this.navCtrl.push(notificationsPage)
     }
 }
 
