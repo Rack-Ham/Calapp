@@ -3,9 +3,9 @@ import { NavController, AlertController } from 'ionic-angular';
 
 /*IMPORT PAGES*/
 
-import { fixPage } from '../Fixation dates/fix';
-import { calendarPage } from '../Calendrier/calendar';
-import { mainoptionPage } from '../Menu - Option/main-option';
+import { fixPage } from '../fixation_dates/fix';
+import { calendarPage } from '../calendrier/calendar';
+import { mainoptionPage } from '../menu_option/main-option';
 
 @Component({
   selector: 'page-home',

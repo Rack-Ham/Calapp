@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 /*IMPORT PAGES*/
 
-import { selectadhPage } from '../Sélection Adhérents/selectadh';
+import { selectadhPage } from '../selection_adherents/selectadh';
 
 
 @Component({

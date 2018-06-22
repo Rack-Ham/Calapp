@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 /*IMPORT PAGES*/
-import { connexionPage } from '../Option - Connexion/connexion';
-import { passwordPage } from '../Option - Changer le mot de passe/change-password';
-import { alertPage } from '../Option - Alerte/alert';
-import { fontsizePage } from '../Option - Taille des caract\u00E8res/fontsize';
-import { notificationsPage } from '../Option - Notifications/notifications';
-import { problemPage } from '../Option - Problème/problem' ;
+import { connexionPage } from '../option_connexion/connexion';
+import { passwordPage } from '../option_changerlemotdepasse/change-password';
+import { alertPage } from '../option_alerte/alert';
+import { fontsizePage } from '../option_tailledescaracteres/fontsize';
+import { notificationsPage } from '../option_notifications/notifications';
+import { problemPage } from '../option_probleme/problem' ;
 
 @Component({
     selector: 'main-option',

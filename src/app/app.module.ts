@@ -9,25 +9,25 @@ import { MyApp } from './app.component';
 //HOMEPAGE
 import { HomePage } from '../pages/home/home';
 //FIXATION DATES
-import { fixPage } from '../pages/Fixation dates/fix';
+import { fixPage } from '../pages/fixation_dates/fix';
 //SELECTION ADHERENTS
-import { selectadhPage } from '../pages/Sélection Adhérents/selectadh';
+import { selectadhPage } from '../pages/selection_adherents/selectadh';
 //CALENDRIER
-import { calendarPage } from '../pages/Calendrier/calendar';
+import { calendarPage } from '../pages/calendrier/calendar';
 //MENU - OPTIONS
-import { mainoptionPage } from '../pages/Menu - Option/main-option';
+import { mainoptionPage } from '../pages/menu_option/main-option';
 //OPTION - CONNEXION
-import { connexionPage } from '../pages/Option - Connexion/connexion';
+import { connexionPage } from '../pages/option_connexion/connexion';
 //OPTION - CHANGE PASSWORD
-import { passwordPage } from '../pages/Option - Changer le mot de passe/change-password' ;
+import { passwordPage } from '../pages/option_changerlemotdepasse/change-password' ;
 //OPTION - ALERT
-import { alertPage } from '../pages/Option - Alerte/alert' ;
+import { alertPage } from '../pages/option_alerte/alert' ;
 //OPTION - FONT SIZE
-import { fontsizePage } from '../pages/Option - Taille des caractères/fontsize' ;
+import { fontsizePage } from '../pages/option_tailledescaracteres/fontsize' ;
 //OPTION - NOTIFICATIONS
-import { notificationsPage } from '../pages/Option - Notifications/notifications' ;
+import { notificationsPage } from '../pages/option_notifications/notifications' ;
 //OPTION - PROBLEM
-import { problemPage } from '../pages/Option - Problème/problem' ;
+import { problemPage } from '../pages/option_probleme/problem' ;
 
 @NgModule({
   declarations: [
