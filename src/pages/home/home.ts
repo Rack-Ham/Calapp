@@ -19,17 +19,17 @@ export class HomePage {
 
   //NAV FIXATION DATES//
 
-  private showFix() {
+  showFix() {
     this.navCtrl.push(fixPage);
   }
 
   //NAV CALENDAR//
-  private showCalendar() {
+  showCalendar() {
     this.navCtrl.push(calendarPage);
   }
 
   //NAV OPTIONS//
-  private showOptions() {
+  showOptions() {
     this.navCtrl.push(mainoptionPage)  }
 }
 

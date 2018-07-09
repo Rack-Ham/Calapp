@@ -41,7 +41,8 @@ $colors: (
   dark:       #222
 );
 
-
+// TOP TOOLBAR
+$toolbar-md-background: color($colors, danger);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

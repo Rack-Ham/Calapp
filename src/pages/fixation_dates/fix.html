@@ -14,31 +14,31 @@
     <ion-list>
         <ion-item>
             <ion-label>Sélectionnez une date</ion-label>
-            <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"
+            <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="mydate"
             yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">
             </ion-datetime>
         </ion-item>
       
         <ion-item>
           <ion-label color="primary" fixed>Titrez l'événement</ion-label>
-          <ion-input placeholder="Nom de l'événement" clearInput></ion-input>
+          <ion-input [(ngModel)]="titre" placeholder="Nom de l'événement" clearInput></ion-input>
         </ion-item>
       
         <ion-item>
             <ion-label color="primary" fixed>Déterminez le lieu</ion-label>
-            <ion-input placeholder="Lieu/Adresse de l'event" clearInput floating></ion-input>
+            <ion-input [(ngModel)]="lieu" placeholder="Lieu/Adresse de l'event" clearInput floating></ion-input>
           </ion-item>
       
         <ion-item>
             <ion-label>Heure de début</ion-label>
-            <ion-datetime displayFormat="HH:mm" [(ngModel)]="myDate">
+            <ion-datetime [(ngModel)]="hours_begin" displayFormat="HH:mm">
 
             </ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label>Heure de fin</ion-label>
-            <ion-datetime displayFormat="HH:mm" [(ngModel)]="myDate">
+            <ion-datetime [(ngModel)]="hours_end" displayFormat="HH:mm">
                 
             </ion-datetime>
         </ion-item>

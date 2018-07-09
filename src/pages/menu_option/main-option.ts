@@ -19,27 +19,27 @@ export class mainoptionPage {
 
 
     }
-    private showConnexion() {
+    showConnexion() {
     this.navCtrl.push(connexionPage)
     }
 
-    private showPassword() {
+    showPassword() {
     this.navCtrl.push(passwordPage)
     }
 
-    private showAlert() {
+    showAlert() {
     this.navCtrl.push(alertPage)
     }
 
-    private showFontsize() {
+    showFontsize() {
     this.navCtrl.push(fontsizePage)
     }
 
-    private showNotifications() {
+    showNotifications() {
     this.navCtrl.push(notificationsPage)
     }
 
-    private showProblem() {
+    showProblem() {
     this.navCtrl.push(problemPage)
     }
 }

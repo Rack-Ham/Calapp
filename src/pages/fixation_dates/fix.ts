@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 /*IMPORT PAGES*/
 
 import { selectadhPage } from '../selection_adherents/selectadh';
+import { DateTime } from 'ionic-angular/components/datetime/datetime';
 
 
 @Component({
@@ -11,17 +12,33 @@ import { selectadhPage } from '../selection_adherents/selectadh';
     templateUrl: 'fix.html'
 })
 export class fixPage {
-
-    constructor(public navCtrl: NavController) {
+    //VARIABLES//
+    titre:string;
+    lieu:string;
+    mydate:any;
+    hours_begin:DateTime;
+    hours_end:DateTime;
+    constructor(public navCtrl: NavController ) {
 
     }
 
-    //INPUT CHECKED
-
-    private showSelectadh() {
-        this.navCtrl.push(selectadhPage);
+    showSelectadh() {
+        console.log(this.titre),
+        console.log(this.lieu),
+        console.log(this.mydate),
+        console.log(this.hours_begin),
+        console.log(this.hours_end),
+        this.navCtrl.push(selectadhPage, {
+            titre: this.titre, 
+            lieu: this.lieu, 
+            mydate:this.mydate, 
+            hours_begin:this.hours_begin, 
+            hours_end:this.hours_end, 
+        }
+    );
     }
 }
+
 
 
 
