@@ -9,5 +9,4 @@ import { NavController } from 'ionic-angular';
   
     constructor(public navCtrl: NavController) {
     }
-    
   }

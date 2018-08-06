@@ -1,0 +1,26 @@
+<!--................HEADER START...............-->
+<ion-header>
+  <ion-navbar>
+    <div ion-row justify-content-between>
+      <ion-title text-center>
+        {{ titre }}
+      </ion-title>
+    </div>
+  </ion-navbar>
+</ion-header>
+<!--...............HEADER END..................-->
+<!--...............CONTENT.....................-->
+<ion-content padding-top text-center>
+<!--<div text-center>-->
+  <div id="panel" *ngIf="mydate && hours_begin && hours_end && lieu">Cet événement aura lieu le {{ mydate }} et commencera à {{ hours_begin }} pour finir à {{ hours_end }}
+    <br> Adresse de l'événement : {{ lieu }}
+    <br> Les participants :
+  </div>
+  <div id="panel_error" *ngIf="!mydate || !hours_begin || !hours_end || !lieu">L'événement n'a pas de données suffisantes</div>
+  <button id="annulation" ion-button color="danger" >Annuler l'événement</button>
+<!--</div>-->
+</ion-content>
+<!--...............END-CONTENT.....................-->
+<!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>

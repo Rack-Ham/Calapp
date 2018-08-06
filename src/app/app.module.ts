@@ -6,12 +6,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { CalendarModule } from 'ionic3-calendar-en';
 //------------------Pages---------------------//
+//TYPE D'UTILISATEUR
+import { usertypePage } from '../pages/user_type/user_type';
 //HOMEPAGE
 import { HomePage } from '../pages/home/home';
 //FIXATION DATES
 import { fixPage } from '../pages/fixation_dates/fix';
 //SELECTION ADHERENTS
 import { selectadhPage } from '../pages/selection_adherents/selectadh';
+//EVENEMENT SELECTIONNE
+import { eventselectedPage } from '../pages/event_selected/event_selected';
 //CALENDRIER
 import { calendarPage } from '../pages/calendrier/calendar';
 //MENU - OPTIONS
@@ -32,6 +36,7 @@ import { problemPage } from '../pages/option_probleme/problem' ;
 @NgModule({
   declarations: [
     MyApp,
+    usertypePage,
     HomePage,
     fixPage,
     selectadhPage,
@@ -42,7 +47,8 @@ import { problemPage } from '../pages/option_probleme/problem' ;
     alertPage,
     fontsizePage,
     notificationsPage,
-    problemPage
+    problemPage,
+    eventselectedPage
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,7 @@ import { problemPage } from '../pages/option_probleme/problem' ;
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    usertypePage,
     HomePage,
     fixPage,
     selectadhPage,
@@ -67,7 +74,8 @@ import { problemPage } from '../pages/option_probleme/problem' ;
     alertPage,
     fontsizePage,
     notificationsPage,
-    problemPage
+    problemPage,
+    eventselectedPage
   ],
   providers: [
     StatusBar,

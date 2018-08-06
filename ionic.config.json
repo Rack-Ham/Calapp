@@ -1,8 +1,8 @@
 {
   "name": "CALACapp",
-  "app_id": "7d3f236d",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "7d3f236d"
 }
