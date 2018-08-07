@@ -1,0 +1,47 @@
+<!--................HEADER START...............-->
+<ion-header>
+  <ion-navbar>
+    <div ion-row justify-content-between>
+    <button ion-fab mini (tap)="showFix()"><ion-icon name="add"></ion-icon></button>
+    <ion-title text-center>
+      Annonces
+    </ion-title>
+    </div>
+  </ion-navbar>
+</ion-header>
+<!--...............HEADER END..................-->
+<!--...............CONTENT.....................-->
+<ion-content padding-top>
+    <ion-list>
+      <div text-center padding-top margin>
+        <button (tap)="showEventselected()" ion-button block color="dark" outline>{{ titre }}<br>
+        {{ mydate }}</button>
+      </div>
+      <div text-center margin>
+          <button (tap)="showEventselected()" ion-button block color="dark" outline><br>
+          </button>
+        </div>
+      <div text-center margin>
+          <button (tap)="showEventselected()" ion-button block color="dark" outline><br>
+          </button>
+      </div>
+      <div text-center margin>
+          <button (tap)="showEventselected()" ion-button block color="dark" outline><br>
+          </button>
+      </div>
+      <div text-center margin>
+          <button (tap)="showEventselected()" ion-button block color="dark" outline><br>
+          </button>
+      </div>
+    </ion-list>
+<div ion-row justify-content-center>
+<ion-img center width="265" height="168" src="https://image.jimcdn.com/app/cms/image/transf/dimension=531x1024:format=jpg/path/sd5a7ed8ecde2cc1d/image/i04ecea4181aa7286/version/1526394324/image.jpg"></ion-img>
+</div>
+<div ion-row align-items-end>
+<button ion-fab mini (tap)="showOptions()"><ion-icon name="cog"></ion-icon></button>
+</div>
+<!--...............END-CONTENT.....................-->
+</ion-content>
+<!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>

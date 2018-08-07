@@ -1,0 +1,28 @@
+<!--................HEADER START...............-->
+<ion-header>
+    <ion-navbar>
+        <div ion-row justify-content-between>
+            <ion-title text-center>
+                Vous êtes...
+            </ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+<!--...............HEADER END..................-->
+<!--...............CONTENT.....................-->
+<ion-content padding-top>
+<div text-center>
+    <button ion-button (tap)="showHome()">
+        Un(e) adhérent(e) &nbsp;
+        <ion-icon name="contacts"></ion-icon>
+    </button>
+    <button (tap)="showAdminAuth()" color="danger" ion-button>
+        Un administrateur &nbsp;
+        <ion-icon name="contact"></ion-icon>
+    </button>
+</div>
+</ion-content>
+<!--...............END-CONTENT.....................-->
+<!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>

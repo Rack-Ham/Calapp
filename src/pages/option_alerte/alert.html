@@ -1,0 +1,23 @@
+<!--................HEADER START...............-->
+<ion-header>
+  <ion-navbar>
+    <div ion-row center>
+      <ion-title text-center>
+        Alerte
+      </ion-title>
+    </div>
+  </ion-navbar>
+</ion-header>
+<!--...............HEADER END..................-->
+<!--...............CONTENT.....................-->
+<ion-content padding-top>
+    <ion-item>
+        <ion-range [(ngModel)]="volume">
+          <ion-icon range-left small name="volume-mute"></ion-icon>
+          <ion-icon range-right name="volume-up"></ion-icon>
+        </ion-range>
+      </ion-item>
+</ion-content>
+<!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>
