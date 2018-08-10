@@ -14,14 +14,14 @@
   <ion-list>
 
     <ion-item>
-      <ion-input type="text" placeholder="E-mail"></ion-input>
+      <ion-input type="text" placeholder="E-mail" #username></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="Mot de passe"></ion-input>
+      <ion-input type="password" placeholder="Mot de passe" #password></ion-input>
     </ion-item>
     <div padding-top text-center>
-      <button ion-button color="dark">Connexion</button>
+      <button ion-button color="dark" (tap)="signInUser()">Connexion</button>
     </div>
   </ion-list>
 </ion-content>

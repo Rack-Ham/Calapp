@@ -30,7 +30,7 @@ export class eventselectedPage {
 
     cancelEvent(){
         this.navParams.data = null;
-        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage);
       }
     
 }

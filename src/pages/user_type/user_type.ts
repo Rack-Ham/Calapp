@@ -17,7 +17,7 @@ import { connexionPage } from '../authentification/connexion';
     }
 
     showHome() {
-        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage);
     }
 
     showAdminAuth() {

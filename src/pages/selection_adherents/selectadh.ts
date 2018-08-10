@@ -31,7 +31,7 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
   
 
     returnHome() {
-        this.navCtrl.push(HomePage, 
+      this.navCtrl.setRoot(HomePage, 
           {
             titre: this.titre, 
             lieu: this.lieu, 

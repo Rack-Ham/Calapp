@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { CalendarModule } from 'ionic3-calendar-en';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 //------------------Pages---------------------//
 //TYPE D'UTILISATEUR
 import { usertypePage } from '../pages/user_type/user_type';
@@ -31,6 +33,16 @@ import { notificationsPage } from '../pages/option_notifications/notifications' 
 //OPTION - PROBLEM
 import { problemPage } from '../pages/option_probleme/problem' ;
 
+//FIREBASE
+const firebaseAuth = {
+  apiKey: "AIzaSyADrSThacdsv8a_EOGk29uWX5byya-0hEo",
+  authDomain: "calacapp-6090a.firebaseapp.com",
+  databaseURL: "https://calacapp-6090a.firebaseio.com",
+  projectId: "calacapp-6090a",
+  storageBucket: "calacapp-6090a.appspot.com",
+  messagingSenderId: "374843283444"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -45,7 +57,7 @@ import { problemPage } from '../pages/option_probleme/problem' ;
     fontsizePage,
     notificationsPage,
     problemPage,
-    eventselectedPage
+    eventselectedPage,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +67,9 @@ import { problemPage } from '../pages/option_probleme/problem' ;
     monthShortNames: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc' ],
     dayNames: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche' ],
     dayShortNames: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-    })
+    }),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
