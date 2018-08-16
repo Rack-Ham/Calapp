@@ -18,17 +18,20 @@ export class HomePage {
   mydate: any;
   hours_begin: DateTime;
   hours_end: DateTime;
+  hide: Boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     console.log(navParams.get('titre'));
     console.log(navParams.get('lieu'));
     console.log(navParams.get('mydate'));
     console.log(navParams.get('hours_begin'));
     console.log(navParams.get('hours_end'));
+    console.log(navParams.get('hide'));
     this.titre = navParams.get('titre');
     this.lieu = navParams.get('lieu');
     this.mydate = navParams.get('mydate');
     this.hours_begin = navParams.get('hours_begin');
     this.hours_end = navParams.get('hours_end');
+    this.hide = navParams.get('hide');
   }
 
   //NAV EVENEMENT SELECTIONNE

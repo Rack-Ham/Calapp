@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { CalendarModule } from 'ionic3-calendar-en';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SQLite } from '@ionic-native/sqlite';
 //------------------Pages---------------------//
 //TYPE D'UTILISATEUR
 import { usertypePage } from '../pages/user_type/user_type';
@@ -90,6 +91,7 @@ const firebaseAuth = {
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

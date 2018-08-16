@@ -11,13 +11,16 @@ import { connexionPage } from '../authentification/connexion';
     templateUrl: 'user_type.html'
   })
   export class usertypePage {
+    hide : Boolean;
     
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+        console.log(navParams.get('hide'));
     }
 
     showHome() {
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(HomePage, {
+            hide : this.hide = true,
+        });
     }
 
     showAdminAuth() {
