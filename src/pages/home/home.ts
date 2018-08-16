@@ -42,6 +42,7 @@ export class HomePage {
       mydate: this.mydate,
       hours_begin: this.hours_begin,
       hours_end: this.hours_end,
+      hide:this.hide,
     }
     )
   }
