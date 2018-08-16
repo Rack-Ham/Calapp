@@ -13,6 +13,29 @@
   <ion-content padding-top>
     <ion-list>
         <ion-item>
+          <ion-label>Activité concernée</ion-label>
+          <ion-select [(ngModel)]="activities" multiple="false">
+              <ion-option>Basket</ion-option>
+              <ion-option>Badminton</ion-option>
+              <ion-option>Boxe</ion-option>
+              <ion-option>Multisports</ion-option>
+              <ion-option>Danses</ion-option>
+              <ion-option>Gym Pilates</ion-option>
+              <ion-option>Yoga</ion-option>
+              <ion-option>Zumba Fitness</ion-option>
+              <ion-option>Krav Maga</ion-option>
+              <ion-option>Judo</ion-option>
+              <ion-option>Anglais</ion-option>
+              <ion-option>Allemand</ion-option>
+              <ion-option>Italien</ion-option>
+              <ion-option>Espagnol</ion-option>
+              <ion-option>Théatre</ion-option>
+              <ion-option>Encadrement</ion-option>
+              <ion-option>Arts Plastiques</ion-option>
+              <ion-option>Autres</ion-option>
+              </ion-select>
+        </ion-item>
+        <ion-item>
             <ion-label>Sélectionnez une date</ion-label>
             <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="mydate"
             yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">

@@ -10,6 +10,7 @@ import { HomePage } from '../home/home';
     templateUrl: 'event_selected.html'
 })
 export class eventselectedPage {
+    activities : string;
     titre: string;
     lieu: string;
     mydate: any;
@@ -17,12 +18,14 @@ export class eventselectedPage {
     hours_end: DateTime;
     hide:Boolean;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+        console.log(navParams.get('activities'));
         console.log(navParams.get('titre'));
         console.log(navParams.get('lieu'));
         console.log(navParams.get('mydate'));
         console.log(navParams.get('hours_begin'));
         console.log(navParams.get('hours_end'));
         console.log(navParams.get('hide'));
+        this.activities = navParams.get('activities');
         this.titre = navParams.get('titre');
         this.lieu = navParams.get('lieu');
         this.mydate = navParams.get('mydate');
