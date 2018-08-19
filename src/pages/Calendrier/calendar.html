@@ -1,0 +1,21 @@
+<!--................HEADER START...............-->
+<ion-header>
+  <ion-navbar>
+    <div ion-row center>
+      <ion-title text-center>
+        Calendrier
+      </ion-title>
+    </div>
+  </ion-navbar>
+</ion-header>
+<!--...............HEADER END..................-->
+<!--...............CONTENT.....................-->
+<ion-content padding-top>
+  <ion-calendar #calendar lang="fr"></ion-calendar>
+  <div text-center>
+    <button ion-button color="danger" (click)="calendar.today()">Jour d'aujourd'hui</button>
+  </div>
+</ion-content>
+<!--..................FOOTER........................-->
+<ion-footer>
+</ion-footer>
