@@ -3,7 +3,7 @@
   <ion-navbar>
     <div ion-row center>
       <ion-title text-center>
-        Changer le mot de passe
+        Reconnexion
       </ion-title>
     </div>
   </ion-navbar>
@@ -14,14 +14,10 @@
   <ion-list>
 
     <ion-item>
-      <ion-input type="password" placeholder="Saisir le nouveau mot de passe"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input type="password" placeholder="Confirmer le nouveau mot de passe"></ion-input>
+      <div>Souhaitez vous tentez une reconnexion ?</div>
     </ion-item>
     <div padding-top text-center>
-      <button ion-button color="dark">Confirmer</button>
+      <button (tap)="showUsertype()" ion-button color="dark">Confirmer</button>
     </div>
   </ion-list>
 </ion-content>

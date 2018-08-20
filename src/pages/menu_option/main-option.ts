@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 /*IMPORT PAGES*/
-import { passwordPage } from '../option_changerlemotdepasse/change-password';
+import { reconnexionPage } from '../option_reconnexion/reconnexion';
 import { alertPage } from '../option_alerte/alert';
 import { fontsizePage } from '../option_tailledescaracteres/fontsize';
 import { notificationsPage } from '../option_notifications/notifications';
@@ -18,8 +18,8 @@ export class mainoptionPage {
 
 
     }
-    showPassword() {
-    this.navCtrl.push(passwordPage)
+    showReconnexion() {
+    this.navCtrl.push(reconnexionPage)
     }
 
     showAlert() {

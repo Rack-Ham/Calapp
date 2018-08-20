@@ -24,7 +24,7 @@ import { eventselectedPage } from '../pages/event_selected/event_selected';
 //MENU - OPTIONS
 import { mainoptionPage } from '../pages/menu_option/main-option';
 //OPTION - CHANGE PASSWORD
-import { passwordPage } from '../pages/option_changerlemotdepasse/change-password' ;
+import { reconnexionPage } from '../pages/option_reconnexion/reconnexion' ;
 //OPTION - ALERT
 import { alertPage } from '../pages/option_alerte/alert' ;
 //OPTION - FONT SIZE
@@ -53,7 +53,7 @@ const firebaseAuth = {
     selectadhPage,
     mainoptionPage,
     connexionPage,
-    passwordPage,
+    reconnexionPage,
     alertPage,
     fontsizePage,
     notificationsPage,
@@ -81,7 +81,7 @@ const firebaseAuth = {
     selectadhPage,
     mainoptionPage,
     connexionPage,
-    passwordPage,
+    reconnexionPage,
     alertPage,
     fontsizePage,
     notificationsPage,
