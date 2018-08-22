@@ -21,7 +21,7 @@ export class connexionPage {
 
     alert(message: string) {
         this.alertCtrl.create({
-            title: 'Connexion réussie !',
+            title: 'Information',
             subTitle: message,
             buttons: ['OK']
         }).present();
