@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
 
 /*IMPORT PAGES*/
 
@@ -19,7 +20,9 @@ export class fixPage {
     mydate:any;
     hours_begin:DateTime;
     hours_end:DateTime;
-    constructor(public navCtrl: NavController ) {
+    data:any;
+    constructor(public navCtrl: NavController, public api: ApiProvider ) {
+        this.refresh();
 
     }
 
@@ -40,6 +43,30 @@ export class fixPage {
         }
     );
     }
+    refresh(){
+        this.api.test().subscribe(
+          res => {
+            this.data=res;
+            console.log(res);
+          },
+          err => {
+            console.log(err);
+          });
+      }
+
+    addEvent(){
+        this.api.add();
+        this.refresh();
+        this.navCtrl.push(ApiProvider, {
+            activities: this.activities,
+            titre: this.titre, 
+            lieu: this.lieu, 
+            mydate:this.mydate, 
+            hours_begin:this.hours_begin, 
+            hours_end:this.hours_end, 
+        }
+    );
+      }
 }
 
 
