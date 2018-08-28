@@ -12,6 +12,15 @@
 <!--...............HEADER END..................-->
 <!--...............CONTENT.....................-->
 <ion-content padding-top>
+   <!-- {{ data | json }} -->
+    <button (tap)="addEvent()" ion-button block color="dark" outline>test add</button>
+    <ul class="">
+        <li class="" *ngFor="let ev of data">
+            {{ ev.idEVENEMENT }} - {{ ev.Date_event | date:'fullDate' }}
+            {{  ev.Date_event | date:'h:mm'}}
+            <img src="">
+        </li>
+    </ul>
     <ion-list>
       <div text-center padding-top margin>
         <button (tap)="showEventselected()" ion-button block color="dark" outline>{{ activities }} - {{ titre }}<br>

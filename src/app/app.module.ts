@@ -33,6 +33,11 @@ import { fontsizePage } from '../pages/option_tailledescaracteres/fontsize' ;
 import { notificationsPage } from '../pages/option_notifications/notifications' ;
 //OPTION - PROBLEM
 import { problemPage } from '../pages/option_probleme/problem' ;
+//------------------API---------------------//
+// API PROVIDER
+import { ApiProvider } from '../providers/api/api';
+//HTTP CLIENT MODULE
+import { HttpClientModule } from '@angular/common/http';
 
 //FIREBASE
 const firebaseAuth = {
@@ -70,7 +75,9 @@ const firebaseAuth = {
     dayShortNames: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
     }),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -92,7 +99,8 @@ const firebaseAuth = {
     StatusBar,
     SplashScreen,
     SQLite,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
   ]
 })
 

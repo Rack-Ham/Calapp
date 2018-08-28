@@ -7,6 +7,7 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
 import { fixPage } from '../fixation_dates/fix';
 import { mainoptionPage } from '../menu_option/main-option';
 import { eventselectedPage } from '../event_selected/event_selected';
+import { ApiProvider } from '../../providers/api/api';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,9 @@ export class HomePage {
   hours_begin: DateTime;
   hours_end: DateTime;
   hide: Boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
     console.log(navParams.get('activities'));
     console.log(navParams.get('titre'));
     console.log(navParams.get('lieu'));
@@ -35,6 +38,9 @@ export class HomePage {
     this.hours_begin = navParams.get('hours_begin');
     this.hours_end = navParams.get('hours_end');
     this.hide = navParams.get('hide');
+    this.refresh();
+
+     
   }
 
   //NAV EVENEMENT SELECTIONNE
@@ -61,4 +67,22 @@ export class HomePage {
   showOptions() {
     this.navCtrl.push(mainoptionPage)
   }
+
+  addEvent(){
+    this.api.add();
+    this.refresh();
+  }
+
+  refresh(){
+    this.api.test().subscribe(
+      res => {
+        this.data=res;
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      });
+  }
+ 
+
 }
