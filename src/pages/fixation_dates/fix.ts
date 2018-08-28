@@ -67,6 +67,10 @@ export class fixPage {
         }
     );
       }
+
+    dateVerif(){
+        return this.hours_begin < this.hours_end;
+        }
 }
 
 
