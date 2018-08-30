@@ -16,8 +16,8 @@
     <button (tap)="addEvent()" ion-button block color="dark" outline>test add</button>
     <ul class="">
         <li class="" *ngFor="let ev of data">
-            {{ ev.idEVENEMENT }} - {{ ev.Date_event | date:'fullDate' }}
-            {{  ev.Date_event | date:'h:mm'}}
+            {{ ev.id }} - {{ ev.date }}
+            {{  ev.date }}
             <img src="">
         </li>
     </ul>

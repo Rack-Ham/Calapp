@@ -12,6 +12,8 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
     selector: 'fix-home',
     templateUrl: 'fix.html'
 })
+
+
 export class fixPage {
     //VARIABLES//
     activities:string;
@@ -26,23 +28,7 @@ export class fixPage {
 
     }
 
-    showSelectadh() {
-        console.log(this.activities),
-        console.log(this.titre),
-        console.log(this.lieu),
-        console.log(this.mydate),
-        console.log(this.hours_begin),
-        console.log(this.hours_end),
-        this.navCtrl.push(selectadhPage, {
-            activities: this.activities,
-            titre: this.titre, 
-            lieu: this.lieu, 
-            mydate:this.mydate, 
-            hours_begin:this.hours_begin, 
-            hours_end:this.hours_end, 
-        }
-    );
-    }
+    
     refresh(){
         this.api.test().subscribe(
           res => {
@@ -67,6 +53,10 @@ export class fixPage {
         }
     );
       }
+
+    dateVerif(){
+        return this.hours_begin < this.hours_end;
+        }
 }
 
 
