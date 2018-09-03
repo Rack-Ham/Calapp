@@ -33,6 +33,8 @@ import { fontsizePage } from '../pages/option_tailledescaracteres/fontsize' ;
 import { notificationsPage } from '../pages/option_notifications/notifications' ;
 //OPTION - PROBLEM
 import { problemPage } from '../pages/option_probleme/problem' ;
+//MODIFYING
+import { modifyPage } from '../pages/modify_event/modify';
 //------------------API---------------------//
 // API PROVIDER
 import { ApiProvider } from '../providers/api/api';
@@ -64,6 +66,7 @@ const firebaseAuth = {
     notificationsPage,
     problemPage,
     eventselectedPage,
+    modifyPage
   ],
   imports: [
     BrowserModule,
@@ -93,7 +96,8 @@ const firebaseAuth = {
     fontsizePage,
     notificationsPage,
     problemPage,
-    eventselectedPage
+    eventselectedPage,
+    modifyPage
   ],
   providers: [
     StatusBar,
