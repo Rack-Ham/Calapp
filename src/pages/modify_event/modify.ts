@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 
 /*IMPORT PAGES*/
 
 import { selectadhPage } from '../selection_adherents/selectadh';
 import { DateTime } from 'ionic-angular/components/datetime/datetime';
+import { HomePage } from '../home/home';
 
 
 @Component({
-    selector: 'fix-home',
-    templateUrl: 'fix.html'
+    selector: 'modify-home',
+    templateUrl: 'modify.html'
 })
 
 
-export class fixPage {
+export class modifyPage {
     //VARIABLES//
     activities:string;
     titre:string;
@@ -23,7 +24,22 @@ export class fixPage {
     hours_begin:DateTime;
     hours_end:DateTime;
     data:any;
-    constructor(public navCtrl: NavController, public api: ApiProvider ) {
+    hide:any;
+    constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider ) {
+        console.log(navParams.get('activities'));
+        console.log(navParams.get('titre'));
+        console.log(navParams.get('lieu'));
+        console.log(navParams.get('mydate'));
+        console.log(navParams.get('hours_begin'));
+        console.log(navParams.get('hours_end'));
+        console.log(navParams.get('hide'));
+        this.activities = navParams.get('activities');
+        this.titre = navParams.get('titre');
+        this.lieu = navParams.get('lieu');
+        this.mydate = navParams.get('mydate');
+        this.hours_begin = navParams.get('hours_begin');
+        this.hours_end = navParams.get('hours_end');
+        this.hide = navParams.get('hide');
         this.refresh();
 
     }
@@ -38,7 +54,11 @@ export class fixPage {
           err => {
             console.log(err);
           });
-      }
+      }      
+
+    dateVerif(){
+        return this.hours_begin < this.hours_end;
+        }
 
     showSelectadh() {
         this.navCtrl.push(selectadhPage, {
@@ -48,26 +68,19 @@ export class fixPage {
             mydate:this.mydate, 
             hours_begin:this.hours_begin, 
             hours_end:this.hours_end, 
-        })
-    } 
+        });
+    }
 
-    addEvent(){
-        this.api.add();
-        this.refresh();
-        this.navCtrl.push(ApiProvider, {
+    validate() {
+        this.navCtrl.setRoot(HomePage, {
             activities: this.activities,
             titre: this.titre, 
             lieu: this.lieu, 
             mydate:this.mydate, 
             hours_begin:this.hours_begin, 
             hours_end:this.hours_end, 
-        }
-    );
-      }
-
-    dateVerif(){
-        return this.hours_begin < this.hours_end;
-        }
+        })
+    }
 }
 
 
