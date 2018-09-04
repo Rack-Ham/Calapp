@@ -25,7 +25,7 @@ export class modifyPage {
     hours_end:DateTime;
     data:any;
     hide:any;
-    dont_hide_items:Boolean;
+    hide_buttons_events:Boolean;
     constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider ) {
         console.log(navParams.get('activities'));
         console.log(navParams.get('titre'));
@@ -41,7 +41,7 @@ export class modifyPage {
         this.hours_begin = navParams.get('hours_begin');
         this.hours_end = navParams.get('hours_end');
         this.hide = navParams.get('hide');
-        this.dont_hide_items = navParams.get('hide_buttons_events');
+        this.hide_buttons_events = navParams.get('hide_buttons_events');
         this.refresh();
 
     }
@@ -81,7 +81,7 @@ export class modifyPage {
             mydate:this.mydate, 
             hours_begin:this.hours_begin, 
             hours_end:this.hours_end,
-            dont_hide_items: this.dont_hide_items 
+            hide_buttons_events: this.hide_buttons_events = true
         })
     }
 }
