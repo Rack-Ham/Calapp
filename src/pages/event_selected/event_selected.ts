@@ -18,6 +18,7 @@ export class eventselectedPage {
     hours_begin: DateTime;
     hours_end: DateTime;
     hide:Boolean;
+    hide_buttons_events:Boolean;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         console.log(navParams.get('activities'));
         console.log(navParams.get('titre'));
@@ -26,6 +27,7 @@ export class eventselectedPage {
         console.log(navParams.get('hours_begin'));
         console.log(navParams.get('hours_end'));
         console.log(navParams.get('hide'));
+        console.log(navParams.get('hide_buttons_events'));
         this.activities = navParams.get('activities');
         this.titre = navParams.get('titre');
         this.lieu = navParams.get('lieu');
@@ -33,6 +35,7 @@ export class eventselectedPage {
         this.hours_begin = navParams.get('hours_begin');
         this.hours_end = navParams.get('hours_end');
         this.hide = navParams.get('hide');
+        this.hide_buttons_events = navParams.get('hide_buttons_events')
     }
 
     modifyEvent(){

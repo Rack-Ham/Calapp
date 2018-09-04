@@ -21,8 +21,8 @@
     </ul>
   </div>
   <div id="panel_error" *ngIf="!activities || !mydate || !hours_begin || !hours_end || !lieu">L'événement n'a pas de données suffisantes ou n'a pas encore été créer.</div>
-  <button *ngIf="!hide" (tap)="modifyEvent()" id="modification" ion-button color="dark">Modifier l'événement</button>
-  <button *ngIf="!hide" (tap)="cancelEvent()" id="annulation" ion-button color="danger" >Annuler l'événement</button>
+  <button *ngIf="!hide && hide_buttons_events" (tap)="modifyEvent()" id="modification" ion-button color="dark">Modifier l'événement</button>
+  <button *ngIf="!hide && hide_buttons_events" (tap)="cancelEvent()" id="annulation" ion-button color="danger" >Annuler l'événement</button>
 <!--</div>-->
 </ion-content>
 <!--...............END-CONTENT.....................-->

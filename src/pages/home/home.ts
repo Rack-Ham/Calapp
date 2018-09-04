@@ -22,6 +22,7 @@ export class HomePage {
   hours_end: DateTime;
   hide: Boolean;
   data:any;
+  hide_buttons_events: Boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
     console.log(navParams.get('activities'));
@@ -38,6 +39,7 @@ export class HomePage {
     this.hours_begin = navParams.get('hours_begin');
     this.hours_end = navParams.get('hours_end');
     this.hide = navParams.get('hide');
+    this.hide_buttons_events = navParams.get('hide_buttons_events');
     this.refresh();
 
      
@@ -53,6 +55,7 @@ export class HomePage {
       hours_begin: this.hours_begin,
       hours_end: this.hours_end,
       hide:this.hide,
+      hide_buttons_events:this.hide_buttons_events
     }
     )
   }
