@@ -17,6 +17,7 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
     mydate:any;
     hours_begin:DateTime;
     hours_end:DateTime;
+    hide_buttons_events: Boolean;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
       console.log(navParams.get('activities'));
       console.log(navParams.get('titre'));
@@ -42,6 +43,7 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
             mydate:this.mydate, 
             hours_begin:this.hours_begin, 
             hours_end:this.hours_end, 
+            hide_buttons_events : this.hide_buttons_events = true
         }
       );
        
