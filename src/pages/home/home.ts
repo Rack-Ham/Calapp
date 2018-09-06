@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DateTime } from 'ionic-angular/components/datetime/datetime';
-
+import { HttpClient } from '@angular/common/http';
 /*IMPORT PAGES*/
-
 import { fixPage } from '../fixation_dates/fix';
 import { mainoptionPage } from '../menu_option/main-option';
 import { eventselectedPage } from '../event_selected/event_selected';
+/*IMPORT API*/
 import { ApiProvider } from '../../providers/api/api';
 
 @Component({
@@ -24,7 +24,9 @@ export class HomePage {
   data:any;
   hide_buttons_events: Boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
+  public items : Array<any> = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider, public http : HttpClient) {
     console.log(navParams.get('activities'));
     console.log(navParams.get('titre'));
     console.log(navParams.get('lieu'));
@@ -40,10 +42,32 @@ export class HomePage {
     this.hours_end = navParams.get('hours_end');
     this.hide = navParams.get('hide');
     this.hide_buttons_events = navParams.get('hide_buttons_events');
-    this.refresh();
+    //this.refresh();
 
      
   }
+
+  ionViewWillEnter() : void
+   {
+      this.load();
+   }
+
+   load() : void
+   {
+      this.http
+      .get('http://localhost/Api/eventRetriever.php')
+      .subscribe((data : any) =>
+      {
+         console.dir(data);
+         this.items = data;
+      },
+      (error : any) =>
+      {
+         console.dir(error);
+      });
+   }
+
+
 
   //NAV EVENEMENT SELECTIONNE
   showEventselected() {
@@ -62,7 +86,8 @@ export class HomePage {
 
   //NAV FIXATION DATES//
 
-  showFix() {
+  showFix() : void 
+  {
     this.navCtrl.push(fixPage);
   }
 
@@ -71,7 +96,7 @@ export class HomePage {
     this.navCtrl.push(mainoptionPage)
   }
 
-  addEvent(){
+  /*addEvent(){
     this.api.add();
     this.refresh();
   }
@@ -85,7 +110,7 @@ export class HomePage {
       err => {
         console.log(err);
       });
-  }
+  }*/
  
 
 }

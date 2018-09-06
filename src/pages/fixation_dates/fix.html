@@ -11,66 +11,69 @@
   <!--...............HEADER END..................-->
   <!--...............CONTENT.....................-->
   <ion-content padding-top>
+      <form [formGroup]="form" (ngSubmit)="saveEntry()">
     <ion-list>
+      
         <ion-item>
           <ion-label>Activité concernée</ion-label>
-          <ion-select [(ngModel)]="activities" multiple="true">
-              <ion-option>Basket</ion-option>
-              <ion-option>Badminton</ion-option>
-              <ion-option>Boxe</ion-option>
-              <ion-option>Multisports</ion-option>
-              <ion-option>Danses</ion-option>
-              <ion-option>Gym Pilates</ion-option>
-              <ion-option>Yoga</ion-option>
-              <ion-option>Zumba Fitness</ion-option>
-              <ion-option>Krav Maga</ion-option>
-              <ion-option>Judo</ion-option>
-              <ion-option>Anglais</ion-option>
-              <ion-option>Allemand</ion-option>
-              <ion-option>Italien</ion-option>
-              <ion-option>Espagnol</ion-option>
-              <ion-option>Théatre</ion-option>
-              <ion-option>Encadrement</ion-option>
-              <ion-option>Arts Plastiques</ion-option>
-              <ion-option>Autres</ion-option>
+          <ion-select [(ngModel)]="activities" multiple="true" formControlName="activities">
+              <ion-option>1</ion-option>
+              <ion-option>2</ion-option>
+              <ion-option>3</ion-option>
+              <ion-option>4</ion-option>
+              <ion-option>5</ion-option>
+              <ion-option>6</ion-option>
+              <ion-option>7</ion-option>
+              <ion-option>8</ion-option>
+              <ion-option>9</ion-option>
+              <ion-option>10</ion-option>
+              <ion-option>11</ion-option>
+              <ion-option>12</ion-option>
+              <ion-option>13</ion-option>
+              <ion-option>14</ion-option>
+              <ion-option>15</ion-option>
+              <ion-option>16</ion-option>
+              <ion-option>17</ion-option>
+              <ion-option>18</ion-option>
               </ion-select>
         </ion-item>
         <ion-item>
             <ion-label>Sélectionnez une date</ion-label>
             <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="mydate"
-            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">
+            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018" formControlName="mydate">
             </ion-datetime>
         </ion-item>
       
         <ion-item>
           <ion-label color="primary" fixed>Titrez l'événement</ion-label>
-          <ion-input [(ngModel)]="titre" placeholder="Nom de l'événement" clearInput></ion-input>
+          <ion-input [(ngModel)]="titre" placeholder="Nom de l'événement" formControlName="titre" clearInput></ion-input>
         </ion-item>
       
         <ion-item>
             <ion-label color="primary" fixed>Déterminez le lieu</ion-label>
-            <ion-input [(ngModel)]="lieu" placeholder="Lieu/Adresse de l'event" clearInput floating></ion-input>
+            <ion-input [(ngModel)]="lieu" placeholder="Lieu/Adresse de l'event" formControlName="lieu" clearInput floating></ion-input>
           </ion-item>
       
         <ion-item>
             <ion-label>Heure de début</ion-label>
-            <ion-datetime [(ngModel)]="hours_begin" displayFormat="HH:mm">
+            <ion-datetime [(ngModel)]="hours_begin" displayFormat="HH:mm" formControlName="hours_begin">
 
             </ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label>Heure de fin</ion-label>
-            <ion-datetime [(ngModel)]="hours_end" displayFormat="HH:mm">
+            <ion-datetime [(ngModel)]="hours_end" displayFormat="HH:mm" formControlName="hours_end">
                 
             </ion-datetime>
         </ion-item>
 
         <div text-center margin-top>
-        <button ion-button color="danger" (tap)="showSelectadh()">Valider</button>
+        <button ion-button color="danger" (tap)="createEntry()">Valider</button>
         </div>
         
       </ion-list>
+    </form>
   </ion-content>
   <!--...............END-CONTENT.....................-->
   <!--..................FOOTER........................-->

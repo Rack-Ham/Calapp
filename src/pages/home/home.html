@@ -13,17 +13,17 @@
 <!--...............CONTENT.....................-->
 <ion-content padding-top>
    <!-- {{ data | json }} -->
-    <button (tap)="addEvent()" ion-button block color="dark" outline>test add</button>
+    <!--<button (tap)="addEvent()" ion-button block color="dark" outline>test add</button>
     <ul class="">
         <li class="" *ngFor="let ev of data">
             {{ ev.id }} - {{ ev.date }}
             <img src="">
         </li>
-    </ul>
+    </ul>-->
     <ion-list>
       <div text-center padding-top margin>
-        <button (tap)="showEventselected()" ion-button block color="dark" outline>{{ activities }} - {{ titre }}<br>
-        {{ mydate }}</button>
+        <button (tap)="showEventselected()" *ngFor="let items of items" ion-button block color="dark" outline>{{item.titre}}<br>
+        </button>
       </div>
       <div text-center margin>
           <button (tap)="showEventselected()" ion-button block color="dark" outline><br>
