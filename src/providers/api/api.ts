@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-/*import { NavParams } from 'ionic-angular';
-import { DateTime } from 'ionic-angular/components/datetime/datetime';*/
+/*import { NavController } from 'ionic-angular';*/
+/*import { DateTime } from 'ionic-angular/components/datetime/datetime';*/
 /*
   Generated class for the ApiProvider provider.
 
@@ -18,7 +18,7 @@ export class ApiProvider {
   mydate: any;
   hours_begin: DateTime;
   hours_end : DateTime;*/
-  constructor(public http: HttpClient, /*public navParams: NavParams*/) {
+  constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
     /*this.activities = navParams.get('activities');
     this.titre = navParams.get('titre');
