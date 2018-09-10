@@ -11,12 +11,12 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
     templateUrl: 'selectadh.html'
   })
   export class selectadhPage {
-    activities:string;
-    titre:string;
-    lieu:string;
-    mydate:any;
-    hours_begin:DateTime;
-    hours_end:DateTime;
+    public activities:string;
+    public titre:string;
+    public lieu:string;
+    public mydate:any;
+    public hours_begin:DateTime;
+    public hours_end:DateTime;
     hide_buttons_events: Boolean;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
       console.log(navParams.get('activities'));

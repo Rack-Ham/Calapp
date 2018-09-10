@@ -14,12 +14,12 @@ import { ApiProvider } from '../../providers/api/api';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  activities: string;
-  titre: string;
-  lieu: string;
-  mydate: any;
-  hours_begin: DateTime;
-  hours_end: DateTime;
+  public activities: string;
+  public titre: string;
+  public lieu: string;
+  public mydate: any;
+  public hours_begin: DateTime;
+  public hours_end: DateTime;
   hide: Boolean;
   data:any;
   hide_buttons_events: Boolean;
@@ -60,6 +60,7 @@ export class HomePage {
       {
          console.dir(data);
          this.items = data;
+         
       },
       (error : any) =>
       {

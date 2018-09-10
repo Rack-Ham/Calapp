@@ -17,12 +17,12 @@ import { HomePage } from '../home/home';
 
 export class modifyPage {
     //VARIABLES//
-    activities:string;
-    titre:string;
-    lieu:string;
-    mydate:any;
-    hours_begin:DateTime;
-    hours_end:DateTime;
+    public activities:string;
+    public titre:string;
+    public lieu:string;
+    public mydate:any;
+    public hours_begin:DateTime;
+    public hours_end:DateTime;
     data:any;
     hide:any;
     hide_buttons_events:Boolean;
