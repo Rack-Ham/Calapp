@@ -11,7 +11,7 @@ export class connexionPage {
 
     @ViewChild('username') user;
     @ViewChild('password') password;
-    hide : Boolean;
+    public hide : Boolean;
     constructor(private alertCtrl: AlertController, private fire: AngularFireAuth, public navCtrl: NavController) {
 
     }
@@ -30,7 +30,7 @@ export class connexionPage {
     signInUser() {
         this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
             .then(data => {
-                console.log('jai les données', this.fire.auth.currentUser);
+                console.log(`J'ai les données`, this.fire.auth.currentUser);
                 this.alert('Bienvenue');
                 //user is logged in
                 this.navCtrl.setRoot(HomePage, {
@@ -38,7 +38,7 @@ export class connexionPage {
                 });
             })
             .catch(error => {
-                console.log('jai une erreur', error);
+                console.log(`J'ai une erreur`, error);
                 this.alert(error.message);
             })
         console.log('Se connecte avec', this.user.value, this.password.value);

@@ -20,9 +20,9 @@ export class HomePage {
   public mydate: any;
   public hours_begin: DateTime;
   public hours_end: DateTime;
-  hide: Boolean;
+  public hide: Boolean;
   data:any;
-  hide_buttons_events: Boolean;
+  public hide_buttons_events: Boolean;
 
   public items : Array<any> = [];
 
@@ -73,14 +73,8 @@ export class HomePage {
   //NAV EVENEMENT SELECTIONNE
   showEventselected() {
     this.navCtrl.push(eventselectedPage, {
-      activities: this.activities,
-      titre: this.titre,
-      lieu: this.lieu,
-      mydate: this.mydate,
-      hours_begin: this.hours_begin,
-      hours_end: this.hours_end,
-      hide:this.hide,
-      hide_buttons_events:this.hide_buttons_events
+      items: this.items,
+      hide: this.hide
     }
     )
   }
