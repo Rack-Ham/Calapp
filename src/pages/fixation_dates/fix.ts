@@ -6,7 +6,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 /*IMPORT PAGES*/
 
-import { selectadhPage } from '../selection_adherents/selectadh';
+//import { selectadhPage } from '../selection_adherents/selectadh';
 import { DateTime } from 'ionic-angular/components/datetime/datetime';
 
 
@@ -21,11 +21,11 @@ export class fixPage {
     public eventsID: any = null;
     private baseURI: string = "http://localhost/Api/"
     public activities: any;
-    public titre: any;
-    public lieu: any;
-    public mydate: any;
-    public hours_begin: any;
-    public hours_end: any;
+    public title: any;
+    public localisation: any;
+    public date: any;
+    public start_event: any;
+    public end_event: any;
     public hideForm: boolean = false;
     public isEdited: boolean = false;
     //data:any;
@@ -36,11 +36,11 @@ export class fixPage {
         public fb: FormBuilder,
         public toastCtrl: ToastController, public api: ApiProvider) {
         this.form = fb.group({
-            "titre": ["", Validators.required],
-            "lieu": ["", Validators.required],
-            "mydate": ["", Validators.required],
-            "hours_begin": ["", Validators.required],
-            "hours_end": ["", Validators.required],
+            "title": ["", Validators.required],
+            "localisation": ["", Validators.required],
+            "date": ["", Validators.required],
+            "start_event": ["", Validators.required],
+            "end_event": ["", Validators.required],
             "activities": ["", Validators.required]
         });
         //this.refresh();
@@ -48,31 +48,34 @@ export class fixPage {
     }
 
     selectEntry(item: any): void {
-        this.activities = item.activities;
-        this.titre = item.titre;
-        this.lieu = item.lieu;
-        this.mydate = item.mydate;
-        this.hours_begin = item.hours_begin;
-        this.hours_end = item.hours_end;
+        this.activities = item.activities.options;
+        this.title = item.title;
+        this.localisation = item.localisation;
+        this.date = item.date;
+        this.start_event = item.hours_begin;
+        this.end_event = item.hours_end;
     }
 
-    createEntry(titre: string, lieu: string, mydate: DateTime, hours_begin: DateTime, hours_end: DateTime): void {
+    createEntry(title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime, activities: string): void {
         let headers: any = new HttpHeaders({ 'Content-type:': 'application/json' }),
-            options: any = { "key": "create", "titre": titre, "lieu": lieu, "mydate": mydate, "hours_begin": hours_begin, "hours_end": hours_end },
+            options: any = { "key": "create", "activities": activities, "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event },
             url: any = this.baseURI + "eventManager.php";
 
         this.http.post(url, JSON.stringify(options), headers).subscribe((data: any) => {
             this.hideForm = true;
-            this.sendNotification(`Congratulations, your event : ${titre} was successfully added`);
+            this.sendNotification(`Congratulations, your event : ${title} was successfully added`);
         },
             (error: any) => {
                 this.sendNotification('Something went wrong !');
+                console.log(error);
+                console.log(options);
             });
+            
     }
 
-    updateEntry(titre: string, lieu: string, mydate: DateTime, hours_begin: DateTime, hours_end: DateTime): void {
+    updateEntry(title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime): void {
         let headers: any = new HttpHeaders({ 'Content-Type': 'application/json' }),
-            options: any = { "key": "update", "titre": titre, "lieu": lieu, "mydate": mydate, "hours_begin": hours_begin, "hours_end": hours_end, "eventsID": this.eventsID },
+            options: any = { "key": "update", "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event, "eventsID": this.eventsID },
             url: any = this.baseURI + "eventManager.php";
 
         this.http
@@ -80,7 +83,7 @@ export class fixPage {
             .subscribe(data => {
                 // If the request was successful notify the user
                 this.hideForm = true;
-                this.sendNotification(`Congratulations the event : ${titre} was successfully updated`);
+                this.sendNotification(`Congratulations the event : ${title} was successfully updated`);
             },
                 (error: any) => {
                     this.sendNotification('Something went wrong!');
@@ -89,7 +92,7 @@ export class fixPage {
 
     deleteEntry() : void
    {
-      let titre     : string 	= this.form.controls["titre"].value,
+      let titre     : string 	= this.form.controls["title"].value,
           headers 	: any		= new HttpHeaders({ 'Content-Type': 'application/json' }),
           options 	: any		= { "key" : "delete", "eventsID" : this.eventsID},
           url       : any      	= this.baseURI + "eventManager.php";
@@ -109,22 +112,30 @@ export class fixPage {
 
    saveEntry() : void
    {
-      let titre   : string = this.form.controls["titre"].value,
-          lieu   : string    = this.form.controls["lieu"].value,
-          mydate : DateTime = this.form.controls["mydate"].value,
-          hours_begin : DateTime = this.form.controls["hours_begin"].value,
-          hours_end : DateTime = this.form.controls["hours_end"].value;
+      let title   : string = this.form.controls["title"].value,
+          localisation   : string    = this.form.controls["localisation"].value,
+          date : DateTime = this.form.controls["date"].value,
+          start_event : DateTime = this.form.controls["start_event"].value,
+          end_event : DateTime = this.form.controls["end_event"].value,
+          activities : any = this.form.controls["activities"].value;
 
       if(this.isEdited)
       {
-         this.updateEntry(titre, lieu, mydate, hours_begin, hours_end);
+         this.updateEntry(title, localisation, date, start_event, end_event);
       }
       else
       {
-         this.createEntry(titre, lieu, mydate, hours_begin, hours_end);
+         this.createEntry(title, localisation, date, start_event, end_event, activities);
       }
    }
 
+   sendNotification(message: string): void {
+    let notification = this.toastCtrl.create({
+        message: message,
+        duration: 3000
+    });
+    notification.present();
+}
 
 
     /*refresh(){
@@ -138,7 +149,7 @@ export class fixPage {
           });
       }*/
 
-    showSelectadh() {
+    /*showSelectadh() {
         this.navCtrl.push(selectadhPage, {
             activities: this.activities,
             titre: this.titre,
@@ -147,12 +158,12 @@ export class fixPage {
             hours_begin: this.hours_begin,
             hours_end: this.hours_end,
         })
-    }
+    }*/
 
-    addEvent() {
+    /*addEvent() {
         /*this.api.add();
         this.refresh();*/
-        this.navCtrl.push(ApiProvider, {
+        /*this.navCtrl.push(ApiProvider, {
             activities: this.activities,
             titre: this.titre,
             lieu: this.lieu,
@@ -167,13 +178,6 @@ export class fixPage {
           return this.hours_begin < this.hours_end;
           }*/
 
-    sendNotification(message: string): void {
-        let notification = this.toastCtrl.create({
-            message: message,
-            duration: 3000
-        });
-        notification.present();
-    }
 }
 
 
