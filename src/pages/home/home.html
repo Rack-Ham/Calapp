@@ -22,7 +22,7 @@
     </ul>-->
     <ion-list>
       <div text-center padding-top margin>
-        <button (tap)="showEventselected()" *ngFor="let items of items" ion-button block color="dark" outline>{{items.title}}<br>{{items.localisation}}
+        <button (tap)="showEventselected(i)" *ngFor="let item of items; let i = index" ion-button block color="dark" outline>{{item.id}}. {{item.title}}<br>{{item.localisation}}
         </button>
       </div>
     </ion-list>

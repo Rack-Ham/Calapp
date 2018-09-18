@@ -25,7 +25,6 @@ export class HomePage {
   public hide_buttons_events: Boolean;
 
   public items : Array<any> = [];
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider, public http : HttpClient) {
     console.log(navParams.get('activities'));
     console.log(navParams.get('title'));
@@ -43,7 +42,7 @@ export class HomePage {
     this.hide = navParams.get('hide');
     this.hide_buttons_events = navParams.get('hide_buttons_events');
     //this.refresh();
-
+    
      
   }
 
@@ -71,9 +70,9 @@ export class HomePage {
 
 
   //NAV EVENEMENT SELECTIONNE
-  showEventselected() {
+  showEventselected(i) {
     this.navCtrl.push(eventselectedPage, {
-      items: this.items,
+      item: this.items[i],
       hide: this.hide
     }
     )

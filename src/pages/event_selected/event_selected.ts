@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { DateTime } from 'ionic-angular/components/datetime/datetime';
 import { modifyPage } from '../modify_event/modify';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,39 +13,36 @@ import { HomePage } from '../home/home';
 export class eventselectedPage {
     hide:Boolean;
     hide_buttons_events:Boolean;
-    public items : Array<any> = [];
+    public item : any;
+    public eventsID : any;
+    public activities : any;
+    public localisation : any;
+    public title : any;
+    public date : any;
+    public start_event : any;
+    public end_event : any;
     constructor(public navCtrl: NavController, public navParams: NavParams, public http : HttpClient) {
-        console.log(navParams.get('items'));
+        console.log(navParams.get('item'));
         console.log(navParams.get('hide'));
         console.log(navParams.get('hide_buttons_events'));
-        this.items = navParams.get('items');
+        this.item = navParams.get('item');
         this.hide = navParams.get('hide');
+        console.log('test'+this.item);
     }
 
-    ionViewWillEnter() : void
-   {
-      this.load();
-   }
 
-   load() : void
-   {
-      this.http
-      .get('http://localhost/Api/eventRetriever.php')
-      .subscribe((data : any) =>
-      {
-         console.dir(data);
-         this.items = data;
-         
-      },
-      (error : any) =>
-      {
-         console.dir(error);
-      });
-   }
 
+    
     modifyEvent(){
         this.navCtrl.push(modifyPage, {
-            items: this.items,
+            eventsID : this.eventsID = this.eventsID = this.item.id,
+            activities : this.activities = this.item.Activities_id,
+            title : this.title = this.item.title,
+            localisation : this.localisation = this.item.localisation,
+            date : this.date = this.item.date,
+            start_event : this.start_event = this.item.start_event,
+            end_event : this.end_event = this.item.end_event,
+            item : this.item
         });
     }
 
