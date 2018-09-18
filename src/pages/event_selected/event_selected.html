@@ -3,7 +3,7 @@
   <ion-navbar>
     <div ion-row justify-content-between>
       <ion-title text-center>
-        {{ items.Activities_id }}
+        {{ item.Activities_id }}
       </ion-title>
     </div>
   </ion-navbar>
@@ -12,15 +12,15 @@
 <!--...............CONTENT.....................-->
 <ion-content padding-top text-center>
 <!--<div text-center>-->
-  <div id="panel" *ngFor="let items of items"><b>{{ items.title }}</b>
-    <p *ngIf="items">Cet événement aura lieu le {{ items.date }} et commencera à {{ items.start_event }} pour finir à {{ items.end_event }}</p>
-    <p *ngIf="items">Adresse de l'événement : {{ items.localisation }}</p>
-    <p *ngIf="items"> Les participants :</p>
+  <div id="panel"><b>{{ item.title }}</b>
+    <p *ngIf="item">Cet événement aura lieu le {{ item.date }} et commencera à {{ item.start_event }} pour finir à {{ item.end_event }}</p>
+    <p *ngIf="item">Adresse de l'événement : {{ item.localisation }}</p>
+    <p *ngIf="item"> Les participants :</p>
     <ul>
       <li></li>
     </ul>
   </div>
-  <div id="panel_error">L'événement n'a pas de données suffisantes ou n'a pas encore été créer.</div>
+  <div *ngIf="!item" id="panel_error">L'événement n'a pas de données suffisantes ou n'a pas encore été créer.</div>
   <button *ngIf="!hide" (tap)="modifyEvent()" id="modification" ion-button color="dark">Modifier l'événement</button>
   <button *ngIf="!hide" (tap)="cancelEvent()" id="annulation" ion-button color="danger" >Annuler l'événement</button>
 <!--</div>-->

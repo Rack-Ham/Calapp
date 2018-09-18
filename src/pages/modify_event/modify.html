@@ -14,60 +14,60 @@
     <ion-list>
         <ion-item>
           <ion-label>Activité concernée</ion-label>
-          <ion-select [(ngModel)]="activities" multiple="true"> {{ activities }}
-              <ion-option>Basket</ion-option>
-              <ion-option>Badminton</ion-option>
-              <ion-option>Boxe</ion-option>
-              <ion-option>Multisports</ion-option>
-              <ion-option>Danses</ion-option>
-              <ion-option>Gym Pilates</ion-option>
-              <ion-option>Yoga</ion-option>
-              <ion-option>Zumba Fitness</ion-option>
-              <ion-option>Krav Maga</ion-option>
-              <ion-option>Judo</ion-option>
-              <ion-option>Anglais</ion-option>
-              <ion-option>Allemand</ion-option>
-              <ion-option>Italien</ion-option>
-              <ion-option>Espagnol</ion-option>
-              <ion-option>Théatre</ion-option>
-              <ion-option>Encadrement</ion-option>
-              <ion-option>Arts Plastiques</ion-option>
-              <ion-option>Autres</ion-option>
+          <ion-select [(ngModel)]="activities" multiple="true">
+            <ion-option value="1">Badminton</ion-option>
+            <ion-option value="2">Basket</ion-option>
+            <ion-option value="3">Boxe</ion-option>
+            <ion-option value="4">Multisports</ion-option>
+            <ion-option value="5">Danses</ion-option>
+            <ion-option value="6">Gym Pilates</ion-option>
+            <ion-option value="7">Yoga</ion-option>
+            <ion-option value="8">Zumba Fitness</ion-option>
+            <ion-option value="9">Krav Maga</ion-option>
+            <ion-option value="10">Judo</ion-option>
+            <ion-option value="11">Allemand</ion-option>
+            <ion-option value="12">Anglais</ion-option>
+            <ion-option value="13">Espagnol</ion-option>
+            <ion-option value="14">Italien</ion-option>
+            <ion-option value="15">Théatre</ion-option>
+            <ion-option value="16">Encadrement</ion-option>
+            <ion-option value="17">Arts Plastiques</ion-option>
+            <ion-option value="18">Autres</ion-option>
               </ion-select>
         </ion-item>
         <ion-item>
             <ion-label>Sélectionnez une date</ion-label>
-            <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="mydate"
-            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018"> {{ mydate }}
+            <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="date"
+            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">
             </ion-datetime>
         </ion-item>
       
         <ion-item>
           <ion-label color="primary" fixed>Titrez l'événement</ion-label>
-          <ion-input [(ngModel)]="titre" placeholder="Nom de l'événement" clearInput>{{ titre }}</ion-input>
+          <ion-input [(ngModel)]="title" placeholder="Nom de l'événement" clearInput></ion-input>
         </ion-item>
       
         <ion-item>
-            <ion-label color="primary" fixed>Déterminez le lieu</ion-label>
-            <ion-input [(ngModel)]="lieu" placeholder="Lieu/Adresse de l'event" clearInput floating>{{ lieu }}</ion-input>
+            <ion-label color="primary" fixed>Déterminez le lieu</ion-label>{{ localisation }}
+            <ion-input [(ngModel)]="localisation" placeholder="Lieu/Adresse de l'event" clearInput floating></ion-input>
           </ion-item>
       
         <ion-item>
             <ion-label>Heure de début</ion-label>
-            <ion-datetime [(ngModel)]="hours_begin" displayFormat="HH:mm">
+            <ion-datetime [(ngModel)]="start_event" displayFormat="HH:mm">
               
             </ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label>Heure de fin</ion-label>
-            <ion-datetime [(ngModel)]="hours_end" displayFormat="HH:mm">
+            <ion-datetime [(ngModel)]="end_event" displayFormat="HH:mm">
                 
             </ion-datetime>
         </ion-item>
 
         <div text-center margin-top>
-        <button ion-button color="danger" (tap)="showSelectadh()">Modifier les adhérents</button>
+        <button ion-button color="dark" (tap)="showSelectadh()">Modifier les adhérents</button>
         <button ion-button color="danger" (tap)="validate()">Terminé</button>
         </div>
         

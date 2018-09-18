@@ -17,29 +17,34 @@ import { HomePage } from '../home/home';
 
 export class modifyPage {
     //VARIABLES//
+    public item: any;
+    public eventsID: any;
     public activities:string;
-    public titre:string;
-    public lieu:string;
-    public mydate:any;
-    public hours_begin:DateTime;
-    public hours_end:DateTime;
+    public title:string;
+    public localisation:string;
+    public date:any;
+    public start_event:DateTime;
+    public end_event:DateTime;
+    private baseURI: string = "http://localhost/Api/";
+    public isEdited: boolean = true;
     data:any;
     hide:any;
     hide_buttons_events:Boolean;
     constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider ) {
         console.log(navParams.get('activities'));
-        console.log(navParams.get('titre'));
-        console.log(navParams.get('lieu'));
-        console.log(navParams.get('mydate'));
-        console.log(navParams.get('hours_begin'));
-        console.log(navParams.get('hours_end'));
+        console.log(navParams.get('title'));
+        console.log(navParams.get('localisation'));
+        console.log(navParams.get('date'));
+        console.log(navParams.get('start_event'));
+        console.log(navParams.get('end_event'));
         console.log(navParams.get('hide'));
         this.activities = navParams.get('activities');
-        this.titre = navParams.get('titre');
-        this.lieu = navParams.get('lieu');
-        this.mydate = navParams.get('mydate');
-        this.hours_begin = navParams.get('hours_begin');
-        this.hours_end = navParams.get('hours_end');
+        this.title = navParams.get('title');
+        this.localisation = navParams.get('localisation');
+        this.date = navParams.get('date');
+        this.start_event= navParams.get('start_event');
+        this.end_event = navParams.get('end_event');
+        this.eventsID = navParams.get('eventsID');
         this.hide = navParams.get('hide');
         this.hide_buttons_events = navParams.get('hide_buttons_events');
         this.refresh();
@@ -59,28 +64,28 @@ export class modifyPage {
       }      
 
     dateVerif(){
-        return this.hours_begin < this.hours_end;
+        return this.start_event < this.end_event;
         }
 
     showSelectadh() {
         this.navCtrl.push(selectadhPage, {
             activities: this.activities,
-            titre: this.titre, 
-            lieu: this.lieu, 
-            mydate:this.mydate, 
-            hours_begin:this.hours_begin, 
-            hours_end:this.hours_end, 
+            title: this.title, 
+            localisation: this.localisation, 
+            date:this.date, 
+            hours_begin:this.start_event, 
+            hours_end:this.end_event, 
         });
     }
 
     validate() {
         this.navCtrl.setRoot(HomePage, {
             activities: this.activities,
-            titre: this.titre, 
-            lieu: this.lieu, 
-            mydate:this.mydate, 
-            hours_begin:this.hours_begin, 
-            hours_end:this.hours_end,
+            title: this.title, 
+            localisation: this.localisation, 
+            date:this.date, 
+            start_event:this.start_event, 
+            end_event:this.end_event,
             hide_buttons_events: this.hide_buttons_events = true
         })
     }
