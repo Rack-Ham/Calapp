@@ -11,10 +11,11 @@
   <!--...............HEADER END..................-->
   <!--...............CONTENT.....................-->
   <ion-content padding-top>
+      <form [formGroup]="form" (ngSubmit)="saveEntry()">
     <ion-list>
         <ion-item>
           <ion-label>Activité concernée</ion-label>
-          <ion-select [(ngModel)]="activities" multiple="true">
+          <ion-select [(ngModel)]="activities" multiple="false" formControlName="activities">
             <ion-option value="1">Badminton</ion-option>
             <ion-option value="2">Basket</ion-option>
             <ion-option value="3">Boxe</ion-option>
@@ -37,41 +38,42 @@
         </ion-item>
         <ion-item>
             <ion-label>Sélectionnez une date</ion-label>
-            <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="date"
-            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">
+            <ion-datetime displayFormat="MMM, DD, YYYY"  [(ngModel)]="date"
+            formControlName="date" yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018">
             </ion-datetime>
         </ion-item>
       
         <ion-item>
           <ion-label color="primary" fixed>Titrez l'événement</ion-label>
-          <ion-input [(ngModel)]="title" placeholder="Nom de l'événement" clearInput></ion-input>
+          <ion-input [(ngModel)]="title" placeholder="Nom de l'événement" formControlName="title" clearInput></ion-input>
         </ion-item>
       
         <ion-item>
             <ion-label color="primary" fixed>Déterminez le lieu</ion-label>{{ localisation }}
-            <ion-input [(ngModel)]="localisation" placeholder="Lieu/Adresse de l'event" clearInput floating></ion-input>
+            <ion-input [(ngModel)]="localisation" placeholder="Lieu/Adresse de l'event" formControlName="localisation" clearInput floating></ion-input>
           </ion-item>
       
         <ion-item>
             <ion-label>Heure de début</ion-label>
-            <ion-datetime [(ngModel)]="start_event" displayFormat="HH:mm">
+            <ion-datetime [(ngModel)]="start_event" formControlName="start_event" displayFormat="HH:mm">
               
             </ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label>Heure de fin</ion-label>
-            <ion-datetime [(ngModel)]="end_event" displayFormat="HH:mm">
+            <ion-datetime [(ngModel)]="end_event" formControlName="end_event" displayFormat="HH:mm">
                 
             </ion-datetime>
         </ion-item>
 
         <div text-center margin-top>
         <button ion-button color="dark" (tap)="showSelectadh()">Modifier les adhérents</button>
-        <button ion-button color="danger" (tap)="validate()">Terminé</button>
+        <button ion-button color="danger" (tap)="updateEntry()">Terminé</button>
         </div>
         
       </ion-list>
+      </form>
   </ion-content>
   <!--...............END-CONTENT.....................-->
   <!--..................FOOTER........................-->

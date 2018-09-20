@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { modifyPage } from '../modify_event/modify';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 /*IMPORT PAGES*/
-import { HomePage } from '../home/home';
+
 
 @Component({
     selector: 'event-selected',
@@ -21,22 +22,50 @@ export class eventselectedPage {
     public date : any;
     public start_event : any;
     public end_event : any;
-    constructor(public navCtrl: NavController, public navParams: NavParams, public http : HttpClient) {
+    public form: FormGroup;
+    private baseURI: string = "http://localhost/Api/"
+    constructor(public navCtrl: NavController, public navParams: NavParams,  public fb: FormBuilder,
+        public toastCtrl: ToastController, public http : HttpClient) {
+        
         console.log(navParams.get('item'));
         console.log(navParams.get('hide'));
         console.log(navParams.get('hide_buttons_events'));
         this.item = navParams.get('item');
         this.hide = navParams.get('hide');
         console.log('test'+this.item);
+        this.eventsID = this.item.id;
+        this.title = this.item.title;
+        this.form = fb.group({
+            "title": ["", Validators.required],
+        });
     }
 
+    deleteEntry() : void
+   {
+      let title     : string 	= this.form.controls["title"].value,
+          headers 	: any		= new HttpHeaders({ 'Content-Type': 'application/json' }),
+          options 	: any		= { "key" : "delete", "eventsID" : this.eventsID},
+          url       : any      	= this.baseURI + "eventManager.php";
+
+      this.http
+      .post(url, JSON.stringify(options), headers)
+      .subscribe(data =>
+      {
+    
+         this.sendNotification(`Congratulations the event ${title} was successfully deleted`);
+      },
+      (error : any) =>
+      {
+         this.sendNotification('Something went wrong!');
+      });
+   }
 
 
     
     modifyEvent(){
         this.navCtrl.push(modifyPage, {
-            eventsID : this.eventsID = this.eventsID = this.item.id,
-            activities : this.activities = this.item.Activities_id,
+            eventsID : this.eventsID = this.item.id,
+            activities : this.activities = this.item.activities,
             title : this.title = this.item.title,
             localisation : this.localisation = this.item.localisation,
             date : this.date = this.item.date,
@@ -46,10 +75,12 @@ export class eventselectedPage {
         });
     }
 
-    cancelEvent(){
-        this.navParams.data = null;
-        this.navCtrl.setRoot(HomePage, {
-            hide : this.hide = false});
-      }
+    sendNotification(message: string): void {
+        let notification = this.toastCtrl.create({
+            message: message,
+            duration: 3000
+        });
+        notification.present();
+    }
     
 }
