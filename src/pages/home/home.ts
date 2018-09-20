@@ -23,7 +23,7 @@ export class HomePage {
   public hide: Boolean;
   data:any;
   public hide_buttons_events: Boolean;
-
+  public eventsID : any;
   public items : Array<any> = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider, public http : HttpClient) {
     console.log(navParams.get('activities'));
