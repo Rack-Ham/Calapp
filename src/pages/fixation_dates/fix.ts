@@ -72,43 +72,7 @@ export class fixPage {
             });
             
     }
-
-    updateEntry(title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime): void {
-        let headers: any = new HttpHeaders({ 'Content-Type': 'application/json' }),
-            options: any = { "key": "update", "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event, "eventsID": this.eventsID },
-            url: any = this.baseURI + "eventManager.php";
-
-        this.http
-            .post(url, JSON.stringify(options), headers)
-            .subscribe(data => {
-                // If the request was successful notify the user
-                this.hideForm = true;
-                this.sendNotification(`Congratulations the event : ${title} was successfully updated`);
-            },
-                (error: any) => {
-                    this.sendNotification('Something went wrong!');
-                });
-    }
-
-    deleteEntry() : void
-   {
-      let titre     : string 	= this.form.controls["title"].value,
-          headers 	: any		= new HttpHeaders({ 'Content-Type': 'application/json' }),
-          options 	: any		= { "key" : "delete", "eventsID" : this.eventsID},
-          url       : any      	= this.baseURI + "eventManager.php";
-
-      this.http
-      .post(url, JSON.stringify(options), headers)
-      .subscribe(data =>
-      {
-         this.hideForm     = true;
-         this.sendNotification(`Congratulations the event ${titre} was successfully deleted`);
-      },
-      (error : any) =>
-      {
-         this.sendNotification('Something went wrong!');
-      });
-   }
+ 
 
    saveEntry() : void
    {
@@ -121,7 +85,7 @@ export class fixPage {
 
       if(this.isEdited)
       {
-         this.updateEntry(title, localisation, date, start_event, end_event);
+
       }
       else
       {
