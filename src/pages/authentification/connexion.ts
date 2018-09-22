@@ -11,7 +11,7 @@ export class connexionPage {
 
     @ViewChild('username') user;
     @ViewChild('password') password;
-    public hide : Boolean;
+    public hide: Boolean;
     constructor(private alertCtrl: AlertController, private fire: AngularFireAuth, public navCtrl: NavController) {
 
     }
@@ -34,14 +34,14 @@ export class connexionPage {
                 this.alert('Bienvenue');
                 //user is logged in
                 this.navCtrl.setRoot(HomePage, {
-                    hide : this.hide = false,
+                    hide: this.hide = false,
                 });
             })
             .catch(error => {
                 console.log(`J'ai une erreur`, error);
                 this.alert(error.message);
             })
-        console.log('Se connecte avec', this.user.value, this.password.value);
+        //console.log('Se connecte avec', this.user.value, this.password.value);
     }
 
 }

@@ -10,6 +10,6 @@ export class alertPage {
     constructor(public navCtrl: NavController) {
 
     }
-    
+
 
 }

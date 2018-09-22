@@ -2,37 +2,42 @@
 <ion-header>
   <ion-navbar>
     <div ion-row justify-content-between>
-    <button *ngIf="!hide" ion-fab mini (tap)="showFix()" ><ion-icon name="add"></ion-icon></button>
-    <ion-title text-center>
-      Annonces
-    </ion-title>
+      <button *ngIf="!hide" ion-fab mini (tap)="showFix()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <ion-title text-center>
+        Annonces
+      </ion-title>
     </div>
   </ion-navbar>
 </ion-header>
 <!--...............HEADER END..................-->
 <!--...............CONTENT.....................-->
 <ion-content padding-top>
-   <!-- {{ data | json }} -->
-    <!--<button (tap)="addEvent()" ion-button block color="dark" outline>test add</button>
+  <!-- {{ data | json }} -->
+  <!--<button (tap)="addEvent()" ion-button block color="dark" outline>test add</button>
     <ul class="">
         <li class="" *ngFor="let ev of data">
             {{ ev.id }} - {{ ev.date }}
             <img src="">
         </li>
     </ul>-->
-    <ion-list>
-      <div text-center padding-top margin>
-        <button (tap)="showEventselected(i)" *ngFor="let item of items; let i = index" ion-button block color="dark" outline>{{item.id}}. {{item.title}}<br>{{item.localisation}}
-        </button>
-      </div>
-    </ion-list>
-<div ion-row justify-content-center>
-<ion-img center width="265" height="168" src="https://image.jimcdn.com/app/cms/image/transf/dimension=531x1024:format=jpg/path/sd5a7ed8ecde2cc1d/image/i04ecea4181aa7286/version/1526394324/image.jpg"></ion-img>
-</div>
-<div ion-row align-items-end>
-<button ion-fab mini (tap)="showOptions()"><ion-icon name="cog"></ion-icon></button>
-</div>
-<!--...............END-CONTENT.....................-->
+  <ion-list>
+    <div text-center padding-top margin>
+      <button (tap)="showEventselected(i)" *ngFor="let item of items; let i = index" ion-button block color="dark"
+        outline>{{item.id}}. {{item.title}}<br>{{item.localisation}}
+      </button>
+    </div>
+  </ion-list>
+  <div ion-row justify-content-center>
+    <ion-img center width="265" height="168" src="https://image.jimcdn.com/app/cms/image/transf/dimension=531x1024:format=jpg/path/sd5a7ed8ecde2cc1d/image/i04ecea4181aa7286/version/1526394324/image.jpg"></ion-img>
+  </div>
+  <div ion-row align-items-end>
+    <button ion-fab mini (tap)="showOptions()">
+      <ion-icon name="cog"></ion-icon>
+    </button>
+  </div>
+  <!--...............END-CONTENT.....................-->
 </ion-content>
 <!--..................FOOTER........................-->
 <ion-footer>

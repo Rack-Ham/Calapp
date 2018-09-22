@@ -6,7 +6,7 @@ import { reconnexionPage } from '../option_reconnexion/reconnexion';
 import { alertPage } from '../option_alerte/alert';
 import { fontsizePage } from '../option_tailledescaracteres/fontsize';
 import { notificationsPage } from '../option_notifications/notifications';
-import { problemPage } from '../option_probleme/problem' ;
+import { problemPage } from '../option_probleme/problem';
 
 @Component({
     selector: 'main-option',
@@ -19,23 +19,23 @@ export class mainoptionPage {
 
     }
     showReconnexion() {
-    this.navCtrl.push(reconnexionPage)
+        this.navCtrl.push(reconnexionPage)
     }
 
     showAlert() {
-    this.navCtrl.push(alertPage)
+        this.navCtrl.push(alertPage)
     }
 
     showFontsize() {
-    this.navCtrl.push(fontsizePage)
+        this.navCtrl.push(fontsizePage)
     }
 
     showNotifications() {
-    this.navCtrl.push(notificationsPage)
+        this.navCtrl.push(notificationsPage)
     }
 
     showProblem() {
-    this.navCtrl.push(problemPage)
+        this.navCtrl.push(problemPage)
     }
 }
 

@@ -24,15 +24,15 @@ import { eventselectedPage } from '../pages/event_selected/event_selected';
 //MENU - OPTIONS
 import { mainoptionPage } from '../pages/menu_option/main-option';
 //OPTION - CHANGE PASSWORD
-import { reconnexionPage } from '../pages/option_reconnexion/reconnexion' ;
+import { reconnexionPage } from '../pages/option_reconnexion/reconnexion';
 //OPTION - ALERT
-import { alertPage } from '../pages/option_alerte/alert' ;
+import { alertPage } from '../pages/option_alerte/alert';
 //OPTION - FONT SIZE
-import { fontsizePage } from '../pages/option_tailledescaracteres/fontsize' ;
+import { fontsizePage } from '../pages/option_tailledescaracteres/fontsize';
 //OPTION - NOTIFICATIONS
-import { notificationsPage } from '../pages/option_notifications/notifications' ;
+import { notificationsPage } from '../pages/option_notifications/notifications';
 //OPTION - PROBLEM
-import { problemPage } from '../pages/option_probleme/problem' ;
+import { problemPage } from '../pages/option_probleme/problem';
 //MODIFYING
 import { modifyPage } from '../pages/modify_event/modify';
 //------------------API---------------------//
@@ -72,10 +72,10 @@ const firebaseAuth = {
     BrowserModule,
     CalendarModule,
     IonicModule.forRoot(MyApp, {
-    monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ],
-    monthShortNames: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc' ],
-    dayNames: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche' ],
-    dayShortNames: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+      monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+      monthShortNames: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
+      dayNames: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+      dayShortNames: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
     }),
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule,
@@ -103,9 +103,9 @@ const firebaseAuth = {
     StatusBar,
     SplashScreen,
     SQLite,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ApiProvider
   ]
 })
 
-export class AppModule {}
+export class AppModule { }

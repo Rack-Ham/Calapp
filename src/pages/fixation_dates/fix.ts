@@ -19,16 +19,17 @@ import { DateTime } from 'ionic-angular/components/datetime/datetime';
 export class fixPage {
     //VARIABLES//
     public eventsID: any = null;
+
     private baseURI: string = "http://localhost/Api/"
+
     public activities: any;
     public title: any;
     public localisation: any;
     public date: any;
     public start_event: any;
     public end_event: any;
-    public hideForm: boolean = false;
+
     public isEdited: boolean = false;
-    //data:any;
     public form: FormGroup;
 
     constructor(public navCtrl: NavController, public http: HttpClient,
@@ -62,7 +63,7 @@ export class fixPage {
             url: any = this.baseURI + "eventManager.php";
 
         this.http.post(url, JSON.stringify(options), headers).subscribe((data: any) => {
-            this.hideForm = true;
+
             this.sendNotification(`Congratulations, your event : ${title} was successfully added`);
         },
             (error: any) => {
@@ -70,36 +71,33 @@ export class fixPage {
                 console.log(error);
                 console.log(options);
             });
-            
+
     }
- 
 
-   saveEntry() : void
-   {
-      let title   : string = this.form.controls["title"].value,
-          localisation   : string    = this.form.controls["localisation"].value,
-          date : DateTime = this.form.controls["date"].value,
-          start_event : DateTime = this.form.controls["start_event"].value,
-          end_event : DateTime = this.form.controls["end_event"].value,
-          activities : any = this.form.controls["activities"].value;
 
-      if(this.isEdited)
-      {
+    saveEntry(): void {
+        let title: string = this.form.controls["title"].value,
+            localisation: string = this.form.controls["localisation"].value,
+            date: DateTime = this.form.controls["date"].value,
+            start_event: DateTime = this.form.controls["start_event"].value,
+            end_event: DateTime = this.form.controls["end_event"].value,
+            activities: any = this.form.controls["activities"].value;
 
-      }
-      else
-      {
-         this.createEntry(title, localisation, date, start_event, end_event, activities);
-      }
-   }
+        if (this.isEdited) {
 
-   sendNotification(message: string): void {
-    let notification = this.toastCtrl.create({
-        message: message,
-        duration: 3000
-    });
-    notification.present();
-}
+        }
+        else {
+            this.createEntry(title, localisation, date, start_event, end_event, activities);
+        }
+    }
+
+    sendNotification(message: string): void {
+        let notification = this.toastCtrl.create({
+            message: message,
+            duration: 3000
+        });
+        notification.present();
+    }
 
 
     /*refresh(){
@@ -127,20 +125,20 @@ export class fixPage {
     /*addEvent() {
         /*this.api.add();
         this.refresh();*/
-        /*this.navCtrl.push(ApiProvider, {
-            activities: this.activities,
-            titre: this.titre,
-            lieu: this.lieu,
-            mydate: this.mydate,
-            hours_begin: this.hours_begin,
-            hours_end: this.hours_end,
-        }
-        );
+    /*this.navCtrl.push(ApiProvider, {
+        activities: this.activities,
+        titre: this.titre,
+        lieu: this.lieu,
+        mydate: this.mydate,
+        hours_begin: this.hours_begin,
+        hours_end: this.hours_end,
     }
+    );
+}
 
-    /*  dateVerif(){
-          return this.hours_begin < this.hours_end;
-          }*/
+/*  dateVerif(){
+      return this.hours_begin < this.hours_end;
+      }*/
 
 }
 

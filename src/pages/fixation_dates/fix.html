@@ -1,81 +1,82 @@
 <!--................HEADER START...............-->
-<ion-header >
-    <ion-navbar>
-      <div ion-row justify-content-between >
+<ion-header>
+  <ion-navbar>
+    <div ion-row justify-content-between>
       <ion-title text-center>
         Fixer l'événement
       </ion-title>
-      </div>
-    </ion-navbar>
-  </ion-header>
-  <!--...............HEADER END..................-->
-  <!--...............CONTENT.....................-->
-  <ion-content padding-top>
-      <form [formGroup]="form" (ngSubmit)="saveEntry()">
+    </div>
+  </ion-navbar>
+</ion-header>
+<!--...............HEADER END..................-->
+<!--...............CONTENT.....................-->
+<ion-content padding-top>
+  <form [formGroup]="form" (ngSubmit)="saveEntry()">
     <ion-list>
-      
-        <ion-item>
-          <ion-label>Activité concernée</ion-label>
-          <ion-select id="list" [(ngModel)]="activities" multiple="false" formControlName="activities">
-              <ion-option value="1">Badminton</ion-option>
-              <ion-option value="2">Basket</ion-option>
-              <ion-option value="3">Boxe</ion-option>
-              <ion-option value="4">Multisports</ion-option>
-              <ion-option value="5">Danses</ion-option>
-              <ion-option value="6">Gym Pilates</ion-option>
-              <ion-option value="7">Yoga</ion-option>
-              <ion-option value="8">Zumba Fitness</ion-option>
-              <ion-option value="9">Krav Maga</ion-option>
-              <ion-option value="10">Judo</ion-option>
-              <ion-option value="11">Allemand</ion-option>
-              <ion-option value="12">Anglais</ion-option>
-              <ion-option value="13">Espagnol</ion-option>
-              <ion-option value="14">Italien</ion-option>
-              <ion-option value="15">Théatre</ion-option>
-              <ion-option value="16">Encadrement</ion-option>
-              <ion-option value="17">Arts Plastiques</ion-option>
-              <ion-option value="18">Autres</ion-option>
-              </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label>Sélectionnez une date</ion-label>
-            <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="date"
-            yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018" formControlName="date">
-            </ion-datetime>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label color="primary" fixed>Titrez l'événement</ion-label>
-          <ion-input [(ngModel)]="title" placeholder="Nom de l'événement" formControlName="title" clearInput></ion-input>
-        </ion-item>
-      
-        <ion-item>
-            <ion-label color="primary" fixed>Déterminez le lieu</ion-label>
-            <ion-input [(ngModel)]="localisation" placeholder="Lieu/Adresse de l'event" formControlName="localisation" clearInput floating></ion-input>
-          </ion-item>
-      
-        <ion-item>
-            <ion-label>Heure de début</ion-label>
-            <ion-datetime [(ngModel)]="start_event" displayFormat="HH:mm" formControlName="start_event">
 
-            </ion-datetime>
-        </ion-item>
+      <ion-item>
+        <ion-label>Activité concernée</ion-label>
+        <ion-select id="list" [(ngModel)]="activities" multiple="false" formControlName="activities">
+          <ion-option value="1">Badminton</ion-option>
+          <ion-option value="2">Basket</ion-option>
+          <ion-option value="3">Boxe</ion-option>
+          <ion-option value="4">Multisports</ion-option>
+          <ion-option value="5">Danses</ion-option>
+          <ion-option value="6">Gym Pilates</ion-option>
+          <ion-option value="7">Yoga</ion-option>
+          <ion-option value="8">Zumba Fitness</ion-option>
+          <ion-option value="9">Krav Maga</ion-option>
+          <ion-option value="10">Judo</ion-option>
+          <ion-option value="11">Allemand</ion-option>
+          <ion-option value="12">Anglais</ion-option>
+          <ion-option value="13">Espagnol</ion-option>
+          <ion-option value="14">Italien</ion-option>
+          <ion-option value="15">Théatre</ion-option>
+          <ion-option value="16">Encadrement</ion-option>
+          <ion-option value="17">Arts Plastiques</ion-option>
+          <ion-option value="18">Autres</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sélectionnez une date</ion-label>
+        <ion-datetime displayFormat="MMM, DD, YYYY" [(ngModel)]="date" yearValues="2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020,2019,2018"
+          formControlName="date">
+        </ion-datetime>
+      </ion-item>
 
-        <ion-item>
-            <ion-label>Heure de fin</ion-label>
-            <ion-datetime [(ngModel)]="end_event" displayFormat="HH:mm" formControlName="end_event">
-                
-            </ion-datetime>
-        </ion-item>
+      <ion-item>
+        <ion-label color="primary" fixed>Titrez l'événement</ion-label>
+        <ion-input [(ngModel)]="title" placeholder="Nom de l'événement" formControlName="title" clearInput></ion-input>
+      </ion-item>
 
-        <div text-center margin-top>
+      <ion-item>
+        <ion-label color="primary" fixed>Déterminez le lieu</ion-label>
+        <ion-input [(ngModel)]="localisation" placeholder="Lieu/Adresse de l'event" formControlName="localisation"
+          clearInput floating></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Heure de début</ion-label>
+        <ion-datetime [(ngModel)]="start_event" displayFormat="HH:mm" formControlName="start_event">
+
+        </ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Heure de fin</ion-label>
+        <ion-datetime [(ngModel)]="end_event" displayFormat="HH:mm" formControlName="end_event">
+
+        </ion-datetime>
+      </ion-item>
+
+      <div text-center margin-top>
         <button ion-button color="danger" (tap)="createEntry()">Valider</button>
-        </div>
-        
-      </ion-list>
-    </form>
-  </ion-content>
-  <!--...............END-CONTENT.....................-->
-  <!--..................FOOTER........................-->
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
+<!--...............END-CONTENT.....................-->
+<!--..................FOOTER........................-->
 <ion-footer>
 </ion-footer>

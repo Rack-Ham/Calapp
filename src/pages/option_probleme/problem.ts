@@ -10,6 +10,6 @@ export class problemPage {
     constructor(public navCtrl: NavController) {
 
     }
-    
+
 
 }

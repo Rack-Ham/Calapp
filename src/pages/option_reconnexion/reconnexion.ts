@@ -11,7 +11,7 @@ export class reconnexionPage {
     constructor(public navCtrl: NavController) {
 
     }
-    
+
     showUsertype() {
         this.navCtrl.setRoot(usertypePage)
     };

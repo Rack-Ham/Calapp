@@ -10,6 +10,6 @@ export class notificationsPage {
     constructor(public navCtrl: NavController) {
 
     }
-    
+
 
 }

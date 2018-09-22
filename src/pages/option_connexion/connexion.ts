@@ -10,6 +10,6 @@ export class connexionPage {
     constructor(public navCtrl: NavController) {
 
     }
-    
+
 
 }

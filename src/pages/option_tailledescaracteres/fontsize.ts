@@ -10,6 +10,6 @@ export class fontsizePage {
     constructor(public navCtrl: NavController) {
 
     }
-    
+
 
 }

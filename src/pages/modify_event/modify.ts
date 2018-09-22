@@ -20,38 +20,38 @@ import { HomePage } from '../home/home';
 export class modifyPage {
     //VARIABLES//
     public item: any;
+
     public eventsID: any;
-    public activities:string;
-    public title:string;
-    public localisation:string;
-    public date:any;
-    public start_event:DateTime;
-    public end_event:DateTime;
+    public activities: string;
+    public title: string;
+    public localisation: string;
+    public date: any;
+    public start_event: DateTime;
+    public end_event: DateTime;
+
     private baseURI: string = "http://localhost/Api/";
     public isEdited: boolean = true;
-    data:any;
-    hide:any;
-    hide_buttons_events:Boolean;
+
+    hide: any;
+
     public form: FormGroup;
-    constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public toastCtrl: ToastController, public fb: FormBuilder, public api: ApiProvider ) {
-        console.log(navParams.get('activities'));
-        console.log(navParams.get('title'));
-        console.log(navParams.get('localisation'));
-        console.log(navParams.get('date'));
-        console.log(navParams.get('start_event'));
-        console.log(navParams.get('end_event'));
-        console.log(navParams.get('eventsID'));
-        console.log(navParams.get('hide'));
+    constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public toastCtrl: ToastController, public fb: FormBuilder, public api: ApiProvider) {
+        //console.log(navParams.get('activities'));
+        //console.log(navParams.get('title'));
+        //console.log(navParams.get('localisation'));
+        //console.log(navParams.get('date'));
+        //console.log(navParams.get('start_event'));
+        //console.log(navParams.get('end_event'));
+        //console.log(navParams.get('eventsID'));
+        //console.log(navParams.get('hide'));
         this.activities = navParams.get('activities');
         this.title = navParams.get('title');
         this.localisation = navParams.get('localisation');
         this.date = navParams.get('date');
-        this.start_event= navParams.get('start_event');
+        this.start_event = navParams.get('start_event');
         this.end_event = navParams.get('end_event');
         this.eventsID = navParams.get('eventsID');
         this.hide = navParams.get('hide');
-        this.hide_buttons_events = navParams.get('hide_buttons_events');
-        this.refresh();
         this.form = fb.group({
             "title": ["", Validators.required],
             "localisation": ["", Validators.required],
@@ -71,7 +71,7 @@ export class modifyPage {
         this.end_event = item.end_event;
     }
 
-    updateEntry(activities : string, title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime): void {
+    updateEntry(activities: string, title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime): void {
         let headers: any = new HttpHeaders({ 'Content-Type': 'application/json' }),
             options: any = { "key": "update", "activities": activities, "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event, eventsID: this.eventsID },
             url: any = this.baseURI + "eventManager.php";
@@ -87,67 +87,48 @@ export class modifyPage {
                 });
     }
 
-    saveEntry() : void
-   {
-      let title   : string = this.form.controls["title"].value,
-          localisation   : string    = this.form.controls["localisation"].value,
-          date : DateTime = this.form.controls["date"].value,
-          start_event : DateTime = this.form.controls["start_event"].value,
-          end_event : DateTime = this.form.controls["end_event"].value,
-          activities : any = this.form.controls["activities"].value;
+    saveEntry(): void {
+        let title: string = this.form.controls["title"].value,
+            localisation: string = this.form.controls["localisation"].value,
+            date: DateTime = this.form.controls["date"].value,
+            start_event: DateTime = this.form.controls["start_event"].value,
+            end_event: DateTime = this.form.controls["end_event"].value,
+            activities: any = this.form.controls["activities"].value;
 
-      if(this.isEdited)
-      {
-         this.updateEntry(activities, title, localisation, date, start_event, end_event);
-      }
-      else
-      {
-      }
-   }
-
-   sendNotification(message: string): void {
-    let notification = this.toastCtrl.create({
-        message: message,
-        duration: 3000
-    });
-    notification.present();
-}
-    
-    refresh(){
-        this.api.test().subscribe(
-          res => {
-            this.data=res;
-            console.log(res);
-          },
-          err => {
-            console.log(err);
-          });
-      }      
-
-    dateVerif(){
-        return this.start_event < this.end_event;
+        if (this.isEdited) {
+            this.updateEntry(activities, title, localisation, date, start_event, end_event);
         }
+        else {
+        }
+    }
+
+    sendNotification(message: string): void {
+        let notification = this.toastCtrl.create({
+            message: message,
+            duration: 3000
+        });
+        notification.present();
+    }
 
     showSelectadh() {
         this.navCtrl.push(selectadhPage, {
             activities: this.activities,
-            title: this.title, 
-            localisation: this.localisation, 
-            date:this.date, 
-            start_event:this.start_event, 
-            end_event:this.end_event, 
+            title: this.title,
+            localisation: this.localisation,
+            date: this.date,
+            start_event: this.start_event,
+            end_event: this.end_event,
         });
     }
 
     validate() {
         this.navCtrl.setRoot(HomePage, {
             activities: this.activities,
-            title: this.title, 
-            localisation: this.localisation, 
-            date:this.date, 
-            start_event:this.start_event, 
-            end_event:this.end_event,
-            hide_buttons_events: this.hide_buttons_events = true
+            title: this.title,
+            localisation: this.localisation,
+            date: this.date,
+            start_event: this.start_event,
+            end_event: this.end_event,
         })
     }
 }

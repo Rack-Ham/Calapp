@@ -9,22 +9,22 @@ import { connexionPage } from '../authentification/connexion';
 @Component({
     selector: 'user-type',
     templateUrl: 'user_type.html'
-  })
-  export class usertypePage {
-    hide : Boolean;
-    
+})
+export class usertypePage {
+    hide: Boolean;
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         console.log(navParams.get('hide'));
     }
 
     showHome() {
         this.navCtrl.setRoot(HomePage, {
-            hide : this.hide = true,
+            hide: this.hide = true,
         });
     }
 
     showAdminAuth() {
-      this.navCtrl.push(connexionPage);
-  }
+        this.navCtrl.push(connexionPage);
+    }
 
-  };
+};
