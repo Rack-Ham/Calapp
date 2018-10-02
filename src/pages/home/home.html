@@ -22,13 +22,26 @@
             <img src="">
         </li>
     </ul>-->
+ 
+
   <ion-list>
-    <div text-center padding-top margin>
-      <button (tap)="showEventselected(i)" *ngFor="let item of items; let i = index" ion-button block color="dark"
-        outline>{{item.id}}. {{item.title}}<br>{{item.localisation}}
-      </button>
-    </div>
+
+    <ion-list-header>Evenements à venir</ion-list-header>
+
+    <ion-item *ngFor="let item of items; let i = index">
+      <ion-avatar item-start>
+        {{ item.activities }}
+      </ion-avatar>
+      <h2>{{item.title}} / {{item.name}}</h2>
+      <p>{{item.localisation}}</p>
+      <ion-note item-end><button ion-button outline (tap)="showEventselected(i)">Détails</button>
+      </ion-note>
+    </ion-item>
+
+
   </ion-list>
+
+
   <div ion-row justify-content-center>
     <ion-img center width="265" height="168" src="https://image.jimcdn.com/app/cms/image/transf/dimension=531x1024:format=jpg/path/sd5a7ed8ecde2cc1d/image/i04ecea4181aa7286/version/1526394324/image.jpg"></ion-img>
   </div>
@@ -37,6 +50,11 @@
       <ion-icon name="cog"></ion-icon>
     </button>
   </div>
+
+
+
+
+
   <!--...............END-CONTENT.....................-->
 </ion-content>
 <!--..................FOOTER........................-->

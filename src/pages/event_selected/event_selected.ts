@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 /*IMPORT PAGES*/
-
+import { HomePage } from '../home/home';
 
 @Component({
     selector: 'event-selected',
@@ -45,18 +45,21 @@ export class eventselectedPage {
 
     deleteEntry(): void {
         let title: string = this.form.controls["title"].value,
-            headers: any = new HttpHeaders({ 'Content-Type': 'application/json' }),
             options: any = { "key": "delete", "eventsID": this.eventsID },
             url: any = this.baseURI + "eventManager.php";
 
         this.http
-            .post(url, JSON.stringify(options), headers)
-            .subscribe(data => {
+            .post(url, options, {headers: new HttpHeaders().set('Content-Type','application/json'),
+            responseType: 'text'})
+            .subscribe(res => {
 
-                this.sendNotification(`Congratulations the event ${title} was successfully deleted`);
+                this.sendNotification(`Félicitation ${title} a été supprimé`);
+                console.log("message :"+ res);
+                this.navCtrl.setRoot(HomePage);
             },
                 (error: any) => {
-                    this.sendNotification('Something went wrong!');
+                    this.sendNotification('Un problème est survenu !');
+                    console.log(error);
                 });
     }
 

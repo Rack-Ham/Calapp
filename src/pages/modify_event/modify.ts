@@ -72,18 +72,22 @@ export class modifyPage {
     }
 
     updateEntry(activities: string, title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime): void {
-        let headers: any = new HttpHeaders({ 'Content-Type': 'application/json' }),
-            options: any = { "key": "update", "activities": activities, "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event, eventsID: this.eventsID },
+        let options: any = { "key": "update", "activities": activities, "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event, eventsID: this.eventsID },
             url: any = this.baseURI + "eventManager.php";
 
         this.http
-            .post(url, JSON.stringify(options), headers)
-            .subscribe(data => {
+            .post(url, options, {headers: new HttpHeaders().set( 'Content-Type', 'application/json' ),
+            responseType: 'text'})
+            .subscribe(res => {
                 // If the request was successful notify the user
-                this.sendNotification(`Congratulations the event : ${title} was successfully updated`);
+                
+                this.sendNotification(`Félicitation ${title} a été mis à jour`);
+                console.log("message :"+ res);
+                this.navCtrl.setRoot(HomePage);
             },
                 (error: any) => {
-                    this.sendNotification('Something went wrong!');
+                    this.sendNotification('Un problème est survenu !');
+                    console.log(error);
                 });
     }
 
