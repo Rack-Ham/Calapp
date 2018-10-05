@@ -37,7 +37,7 @@ export class HomePage {
 
   load(): void {
     this.http
-      .get('http://localhost/Api/eventRetriever.php')
+      .get('http://localhost/Api/controller.php?action=list')
       .subscribe((data: any) => {
         console.dir(data);
         this.items = data;

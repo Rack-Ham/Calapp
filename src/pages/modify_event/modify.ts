@@ -73,7 +73,7 @@ export class modifyPage {
 
     updateEntry(activities: string, title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime): void {
         let options: any = { "key": "update", "activities": activities, "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event, eventsID: this.eventsID },
-            url: any = this.baseURI + "eventManager.php";
+            url: any = this.baseURI + "controller.php";
 
         this.http
             .post(url, options, {headers: new HttpHeaders().set( 'Content-Type', 'application/json' ),

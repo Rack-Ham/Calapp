@@ -60,7 +60,7 @@ export class fixPage {
 
     createEntry(title: string, localisation: string, date: DateTime, start_event: DateTime, end_event: DateTime, activities: string): void {
         let options: any = { "key": "create", "activities": activities, "title": title, "localisation": localisation, "date": date, "start_event": start_event, "end_event": end_event },
-            url: any = this.baseURI + "eventManager.php";
+            url: any = this.baseURI + "controller.php";
         this.http.post(url, options,{
             headers: new HttpHeaders().set('Content-Type', 'application/json'),
             responseType: 'text' 

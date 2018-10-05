@@ -46,7 +46,7 @@ export class eventselectedPage {
     deleteEntry(): void {
         let title: string = this.form.controls["title"].value,
             options: any = { "key": "delete", "eventsID": this.eventsID },
-            url: any = this.baseURI + "eventManager.php";
+            url: any = this.baseURI + "controller.php";
 
         this.http
             .post(url, options, {headers: new HttpHeaders().set('Content-Type','application/json'),
